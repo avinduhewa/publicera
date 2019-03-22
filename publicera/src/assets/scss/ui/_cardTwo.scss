@@ -1,0 +1,27 @@
+.card-three { 
+    background-color: red;
+    height: 200px;
+    text-align: center; 
+    position: relative;
+    overflow: hidden;
+    img {
+    }
+    .card-title  {
+        padding-top: 80px;
+        position: absolute;
+        z-index: 200;
+        left: 30%;
+        h1 {
+            color: white;
+            font-weight: 600;
+            font-size: 25px;
+        }
+    }
+
+    &:hover {
+        box-shadow: 0 3px 20px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+        bottom: 1px;
+        transition: .3s;
+    }
+
+}
