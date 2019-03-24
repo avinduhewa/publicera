@@ -1,0 +1,18 @@
+.card {
+    padding: 10px;
+    margin-top: 20px;
+    background: #FFFFFF;
+    box-shadow: 0 2px 29px 0 rgba(0,0,0,0.06);
+    border: none;
+    position: relative;
+
+    .footer {
+        font-size: 15px;
+        font-weight: 600;
+        padding: 10px;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        color: #388FFF !important;
+    }
+}
