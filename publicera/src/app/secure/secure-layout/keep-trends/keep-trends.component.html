@@ -1,0 +1,32 @@
+<h4>Featured articles</h4>
+
+<div class="card-section">
+  <div class="row">
+
+  </div>
+  <app-artcle-card></app-artcle-card>
+</div>
+
+
+<div class="pill-section">
+  <div class="pill-holder">
+    <ul class="nav nav-pills">
+      <li><a class="pill-button active show" data-toggle="tab" target="_self" href="#about">Featured articles</a></li>
+      <li><a class="pill-button" data-toggle="tab" target="_self" href="#collection">Featured articles</a></li>
+    </ul>
+  </div>
+  <hr>
+  <div class="tab-content">
+    <div id="about" class="tab-pane fade in active show">
+      <div class="">
+        <app-artcle-card-horizontal></app-artcle-card-horizontal>
+        <app-artcle-card-horizontal></app-artcle-card-horizontal>
+      </div>
+    </div>
+    <div id="menu1" class="tab-pane fade">
+      <div id="collection" class="tab-pane fade in">
+        <app-artcle-card-horizontal></app-artcle-card-horizontal>
+      </div>
+    </div>
+  </div>
+</div>

@@ -34,6 +34,15 @@ $feature-slider-width-md: 700px;
     right: 0;
     bottom: 0;
     left: 0;
+
+    img {
+        width: 80%;
+        position: absolute;
+        top: 10%;
+        right: 0px;
+        bottom: 0;
+        left: 10%;
+    }
   }
 
   // * Slide item

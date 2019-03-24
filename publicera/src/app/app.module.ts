@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 
 //modules 
 import { CoreModule } from './core/core.module';
-import { LandingPageModule } from './landing-page/landing-page.module';
 import { SharedModule } from './shared/shared.module';
 import { PublicModule } from './public/public.module';
 import { SecureModule } from './secure/secure.module';
@@ -16,13 +15,12 @@ import { SecureModule } from './secure/secure.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     CoreModule,
-    LandingPageModule,
     SharedModule,
     PublicModule,
     SecureModule,
