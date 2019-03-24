@@ -12,57 +12,17 @@
 @import "./assets/scss/utils/extends";
 @import "./assets/scss/utils/functions";
 
+//UI
+@import "./assets/scss/ui/button";
+
 // Core CSS
 @import "./assets/scss/base/scaffolding";
 @import "./assets/scss/base/type";
-// @import "base/grid";
-@import "./assets/scss/ui/code";
-@import "./assets/scss/ui/tables";
-@import "./assets/scss/ui/forms";
-@import "./assets/scss/ui/buttons";
-
-// Components
-@import "./assets/scss/ui/component-animations";
-@import "./assets/scss/ui/dropdowns";
-@import "./assets/scss/ui/button-groups";
-@import "./assets/scss/ui/input-groups";
-@import "./assets/scss/ui/navs";
-@import "./assets/scss/ui/navbar";
-@import "./assets/scss/ui/breadcrumbs";
-@import "./assets/scss/ui/pagination";
-@import "./assets/scss/ui/pager";
-@import "./assets/scss/ui/labels";
-@import "./assets/scss/ui/badges";
-@import "./assets/scss/ui/jumbotron";
-@import "./assets/scss/ui/thumbnails";
-@import "./assets/scss/ui/alerts";
-@import "./assets/scss/ui/progress-bars";
-@import "./assets/scss/ui/media";
-@import "./assets/scss/ui/list-group";
-@import "./assets/scss/ui/panels";
-@import "./assets/scss/ui/responsive-embed";
-@import "./assets/scss/ui/wells";
-@import "./assets/scss/ui/close";
-@import "./assets/scss/ui/switch";
-@import "./assets/scss/ui/card";
-@import "./assets/scss/ui/cardTwo";
-
-// Components w/ JavaScript
-@import "./assets/scss/ui/modals";
-@import "./assets/scss/ui/tooltip";
-@import "./assets/scss/ui/popovers";
-@import "./assets/scss/ui/carousel";
 
 // Utility classes
 @import "./assets/scss/utils/utilities";
-@import "./assets/scss/ui/responsive-utilities";
 @import "./assets/scss/utils/helpers";
 
-// Layout
-@import "./assets/scss/layout/app-header";
-@import "./assets/scss/layout/app-container";
-@import "./assets/scss/layout/app-footer";
-@import "./assets/scss/layout/app-wrapper";
 
 
 
