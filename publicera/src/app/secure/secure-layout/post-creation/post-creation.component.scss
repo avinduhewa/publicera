@@ -1,0 +1,80 @@
+.btn {
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    box-shadow: 0 2px 25px 0 rgba(0,0,0,0.07);
+    border:none;
+}
+
+.post-creating {
+    margin: 10px;
+
+    .textarea {
+        background: #FFFFFF;
+        box-shadow: 0 2px 25px 0 rgba(0,0,0,0.07);
+        border: none;
+        font-size: 15px;
+    }
+}
+
+.suggested-words {
+    margin: 10px;
+}
+
+.suggested-hashtags {
+    margin: 10px;
+}
+
+.tag-holder {
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    .tag {
+        background: #eee;
+        border-radius: 3px 0 0 3px;
+        color: #999;
+        display: inline-block;
+        height: 26px;
+        line-height: 26px;
+        padding: 0 20px 0 23px;
+        position: relative;
+        margin: 0 10px 10px 0;
+        text-decoration: none;
+        -webkit-transition: color 0.2s;
+        font-size: 12px;
+      }
+      
+      .tag::before {
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: inset 0 1px rgba(0, 0, 0, 0.25);
+        content: '';
+        height: 6px;
+        left: 10px;
+        position: absolute;
+        width: 6px;
+        top: 10px;
+      }
+      
+      .tag::after {
+        background: #fff;
+        border-bottom: 13px solid transparent;
+        border-left: 10px solid #eee;
+        border-top: 13px solid transparent;
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+      
+      .tag:hover {
+        background-color: #388FFF;
+        color: white;
+      }
+      
+      .tag:hover::after {
+         border-left-color: #388FFF; 
+      }
+}
+

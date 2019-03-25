@@ -1,0 +1,72 @@
+.card--rect {
+
+    margin: 5px;
+    height: auto;
+    .container {
+        padding: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        .row-Const {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .main-img-cont {
+            .image-container {
+                position: relative;
+                overflow: hidden;
+                text-align: left;
+                width: auto;
+                width: 150px;
+
+                @media screen and (max-width: 425px) {
+                    width: 100px;
+                }
+
+                img {
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                 }
+            }
+            .text-container {
+                margin-left: 5px;
+                span {
+                    font-size: 12px;
+                    text-align: left;
+                    padding: 5px;
+
+                    @media screen and (max-width: 425px) {
+                        font-size: 12px;
+                    }
+                }
+                .des {
+                    font-size: 15px;
+                    text-align: left;
+                    font-weight: 600;
+                    padding: 5px;
+                    @media screen and (max-width: 425px) {
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+        .sold-out-container {
+            color: rgb(238, 52, 52);
+            font-weight: 600;
+            font-size: 15px;
+            margin: 10px;
+        }
+    }
+}
+
+hr {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    border: 0;
+    border-top: 2px solid #eeeeee;
+}

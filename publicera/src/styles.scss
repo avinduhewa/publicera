@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+// Core base colors, fonts, and variables
+@import "./assets/scss/base/color-palatte";
+@import "./assets/scss/base/fonts";
+@import "./assets/scss/base/app-variables";
+@import "./assets/scss/base/variables";
+
+// Core Mixins and Extends
+@import "./assets/scss/utils/mixins";
+@import "./assets/scss/utils/twbs-mixins";
+@import "./assets/scss/utils/extends";
+@import "./assets/scss/utils/functions";
+
+//UI
+@import "./assets/scss/ui/button";
+
+// Core CSS
+@import "./assets/scss/base/scaffolding";
+@import "./assets/scss/base/type";
+
+// Utility classes
+@import "./assets/scss/utils/utilities";
+@import "./assets/scss/utils/helpers";
+
+
+
+
+// Components
+// @import "./assets/scss/components/**/*";
