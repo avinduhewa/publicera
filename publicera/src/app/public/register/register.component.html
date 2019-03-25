@@ -32,38 +32,32 @@
         <form class="form login-form">
 
           <div class="form-group">
-            <label for="loginUsername">Email Address</label>
-            <input type="text" class="form-control" formControlName="username" id="loginUsername"
-              placeholder="e.g. 0001">
+            <label for="email">Email Address</label>
+            <input type="text" class="form-control" id="email" name="email" [(ngModel)]="email"
+              placeholder="test@email.com">
           </div>
           <div class="form-group">
-            <label for="loginPassword">Password</label>
-            <input type="password" class="form-control" id="loginPassword" formControlName="password"
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" name="password" [(ngModel)]="password"
               placeholder="● ● ● ● ●">
           </div>
           <div class="form-group">
-            <label for="loginPassword">Confirm password</label>
-            <input type="password" class="form-control" id="loginPassword" formControlName="password"
+            <label for="confPassword">Confirm Password</label>
+            <input type="password" class="form-control" id="confPassword" name="confPassword" [(ngModel)]="confPassword"
               placeholder="● ● ● ● ●">
           </div>
           <div class="form-group">
-            <label for="loginUsername">Company Name</label>
-            <input type="text" class="form-control" formControlName="username" id="loginUsername"
-              placeholder="e.g. 0001">
+            <label for="companyName">Company Name</label>
+            <input type="text" class="form-control" id="companyName" name="companyName" [(ngModel)]="companyName"
+              placeholder="ABC Company">
           </div>
           <div class="form-group">
-            <label for="loginUsername">Industry</label>
-            <input type="text" class="form-control" formControlName="username" id="loginUsername"
-              placeholder="e.g. 0001">
-          </div>
-          <div class="form-group misc-box">
-            <div class="form-check remember-me">
-              <input type="checkbox" class="form-check-input" id="rememberMe" checked>
-              <label class="form-check-label" for="rememberMe">Remember me</label>
-            </div>
+            <label for="industry">Industry</label>
+            <input type="text" class="form-control" id="industry" name="industry" [(ngModel)]="industry"
+              placeholder="Information Technology Services">
           </div>
 
-          <button type="submit" class="btn btn-primary-active submit">Sign up</button>
+          <button type="button" class="btn btn-primary-active submit" (click)="register()">Register</button>
         </form>
         <!-- Form end -->
       </div>
@@ -71,8 +65,8 @@
 
       <!-- Onboarding content footer start -->
       <div class="onboarding-content--footer">
-        <p class="note">Don't have an account?
-          <a routerLink="/sign-up">Request a one here</a>
+        <p class="note">Already Have an account?
+          <a routerLink="/login">Login</a>
         </p>
       </div>
       <!-- Onboarding content footer end -->
