@@ -1,0 +1,68 @@
+<form class="form login-form">
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="loginUsername">Facebook URL</label>
+        <input type="text" class="form-control" formControlName="username" id="loginUsername" placeholder="e.g. 0001">
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="loginPassword">Instagram URL</label>
+        <input type="password" class="form-control" id="loginPassword" formControlName="password"
+          placeholder="● ● ● ● ●">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="loginUsername">Facebook URL</label>
+        <input type="text" class="form-control" formControlName="username" id="loginUsername" placeholder="e.g. 0001">
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="loginPassword">Instagram URL</label>
+        <input type="password" class="form-control" id="loginPassword" formControlName="password"
+          placeholder="● ● ● ● ●">
+      </div>
+    </div>
+  </div>
+  <button style="text-align:center" type="submit" class="btn btn-primary-active submit">Sign in</button>
+
+</form>
+
+<div class="pill-section">
+  <div class="pill-holder">
+    <ul class="nav nav-pills">
+      <li><a class="pill-button active show" data-toggle="tab" target="_self" href="#about">Facebook</a></li>
+      <li><a class="pill-button" data-toggle="tab" target="_self" href="#collection">Instagram</a></li>
+    </ul>
+  </div>
+  <div class="tab-content">
+    <div id="about" class="tab-pane fade in active show">
+      <div class="">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <app-card-shadow></app-card-shadow>
+            </div>
+            <div class="col-md-6">
+              <app-card-shadow></app-card-shadow>
+            </div>
+          </div>
+          <div>
+            <app-card-shadow></app-card-shadow>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="menu1" class="tab-pane fade">
+      <div id="collection" class="tab-pane fade in">
+        <app-artcle-card-horizontal></app-artcle-card-horizontal>
+      </div>
+    </div>
+  </div>
+</div>
