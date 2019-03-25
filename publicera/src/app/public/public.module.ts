@@ -15,7 +15,13 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
-  declarations: [LoginComponent, RegisterComponent, LoginnLayoutComponent, SliderComponent, LandingPageComponent],
+  declarations: [
+    LoginComponent,
+    RegisterComponent,
+    LoginnLayoutComponent,
+    SliderComponent,
+    LandingPageComponent
+  ],
   imports: [
     CommonModule,
     FormsModule,

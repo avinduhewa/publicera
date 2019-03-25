@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { auth } from 'firebase/app';
+import { UserService } from 'src/app/shared/services/user.service';
 
 @Component({
   selector: 'app-login',
@@ -17,7 +18,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    public afAuth: AngularFireAuth
+    private afAuth: AngularFireAuth,
+    private userService: UserService,
   ) { }
 
   ngOnInit() {
@@ -40,8 +42,11 @@ export class LoginComponent implements OnInit {
       .then(res => {
         console.log(res);
         this.errorMsg = null;
-        localStorage.setItem('user', JSON.stringify(res));
-        this.router.navigateByUrl('app');
+        this.userService.getUser(this.email).subscribe(response => {
+          localStorage.setItem('userId', response._id);
+          localStorage.setItem('user', JSON.stringify(response));
+          this.router.navigateByUrl('app');
+        });
       })
       .catch(err => {
         console.error(err);
