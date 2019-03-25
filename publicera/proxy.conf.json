@@ -1,0 +1,12 @@
+{
+  "/dev/user": {
+    "target": "https://x29ges3hmb.execute-api.ap-southeast-1.amazonaws.com",
+    "secure": false,
+    "changeOrigin": true
+  },
+  "/v0/b": {
+    "target": "https://firebasestorage.googleapis.com",
+    "secure": false,
+    "changeOrigin": true
+  }
+}

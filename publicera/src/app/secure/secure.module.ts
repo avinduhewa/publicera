@@ -11,12 +11,22 @@ import { PostCreationComponent } from './secure-layout/post-creation/post-creati
 import { TalktoProComponent } from './secure-layout/talkto-pro/talkto-pro.component';
 
 import { SharedModule } from '../shared/shared.module';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
 @NgModule({
-  declarations: [SecureLayoutComponent, KeepTrendsComponent, DigitalMarketingComponent, SocialMediaManagementComponent, CompetitorComponent, PostCreationComponent, TalktoProComponent],
+  declarations: [
+    SecureLayoutComponent,
+    KeepTrendsComponent,
+    DigitalMarketingComponent,
+    SocialMediaManagementComponent,
+    CompetitorComponent,
+    PostCreationComponent,
+    TalktoProComponent
+  ],
   imports: [
     CommonModule,
     SecureRoutingModule,
-    SharedModule
+    SharedModule,
+    PdfViewerModule
   ]
 })
 export class SecureModule { }

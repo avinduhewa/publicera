@@ -3,18 +3,16 @@
     <div class="row-Const">
       <div class="main-img-cont">
         <div class="image-container">
-          <img src="../../../../assets/images/sample.png" alt="">
+          <img [src]="feed.thumbnail" alt="">
         </div>
       </div>
       <div class="main-img-cont">
         <div class="text-container">
           <div class="des">
-            Google wants you to game on Google Stadia
+            {{feed.description | stripHtmlTags}}
           </div>
-
-
           <span>
-            asdasda
+            {{feed.title | stripHtmlTags}} - {{feed.author | stripHtmlTags}}
           </span>
         </div>
       </div>
