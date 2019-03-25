@@ -15,6 +15,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from 'src/environments/environment';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
 
 ////
 
@@ -30,10 +31,12 @@ import { environment } from 'src/environments/environment';
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
     AngularFireStorageModule, // imports firebase/storage only needed for storage features
     AppRoutingModule,
+    PdfViewerModule,
     CoreModule,
     SharedModule,
     PublicModule,
     SecureModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
