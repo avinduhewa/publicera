@@ -36,6 +36,8 @@ export class LoginComponent implements OnInit {
       .then(res => {
         console.log(res);
         this.errorMsg = null;
+        localStorage.setItem('user', JSON.stringify(res));
+        this.router.navigateByUrl('app');
       })
       .catch(err => {
         console.error(err);
