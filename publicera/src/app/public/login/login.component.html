@@ -32,28 +32,29 @@
         <form class="form login-form">
 
           <div class="form-group">
-            <label for="loginUsername">Username</label>
-            <input type="text" class="form-control" formControlName="username" id="loginUsername"
-              placeholder="e.g. 0001">
+            <label for="Email">Email</label>
+            <input type="text" class="form-control" name="email" id="Email" placeholder="user@email.com"
+              [(ngModel)]="email">
           </div>
 
 
           <div class="form-group">
-            <label for="loginPassword">Password</label>
-            <input type="password" class="form-control" id="loginPassword" formControlName="password"
-              placeholder="● ● ● ● ●">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" name="password" placeholder="● ● ● ● ●"
+              [(ngModel)]="password">
           </div>
 
           <div class="form-group misc-box">
             <div class="form-check remember-me">
-              <input type="checkbox" class="form-check-input" id="rememberMe" checked>
+              <input type="checkbox" class="form-check-input" name="rememberMe" id="rememberMe" checked
+                (change)="rememberMe()" [(ngModel)]="rememberMeCheckBox">
               <label class="form-check-label" for="rememberMe">Remember me</label>
             </div>
 
             <a routerLink="/forgot-password" class="forgot-password-link">Forgot password</a>
           </div>
 
-          <button type="submit" class="btn btn-primary-active submit">Sign in</button>
+          <button type="button" (click)="login()" class="btn btn-primary-active submit">Login</button>
         </form>
         <!-- Form end -->
       </div>
@@ -62,7 +63,7 @@
       <!-- Onboarding content footer start -->
       <div class="onboarding-content--footer">
         <p class="note">Don't have an account?
-          <a routerLink="/sign-up">Request a one here</a>
+          <a routerLink="/register">Request a one here</a>
         </p>
       </div>
       <!-- Onboarding content footer end -->

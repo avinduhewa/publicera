@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FeedService } from 'src/app/shared/services/feed.service';
 
 @Component({
   selector: 'app-keep-trends',
@@ -7,9 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class KeepTrendsComponent implements OnInit {
 
-  constructor() { }
+  private feedUrl = 'https://techmeme.com/feed.xml';
+  private feeds: any;
+
+  constructor(
+    private feedService: FeedService
+  ) { }
 
   ngOnInit() {
+    this.refreshFeed();
   }
 
+  private refreshFeed() {
+    this.feedService.getFeedContent(this.feedUrl)
+      .subscribe(
+        (feed: any) => {
+          console.log(feed.items);
+          this.feeds = feed.items;
+        },
+        error => console.log(error));
+  }
 }
