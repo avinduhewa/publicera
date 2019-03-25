@@ -8,6 +8,8 @@ import { ArtcleCardComponent } from './components/artcle-card/artcle-card.compon
 import { ArtcleCardHorizontalComponent } from './components/artcle-card-horizontal/artcle-card-horizontal.component';
 import { CardShadowComponent } from './components/card-shadow/card-shadow.component';
 import { UserService } from './services/user.service';
+import { StripHtmlTagsPipe } from './pipes/strip-html-tags.pipe';
+import { FeedService } from './services/feed.service';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,8 @@ import { UserService } from './services/user.service';
     FooterComponent,
     ArtcleCardComponent,
     ArtcleCardHorizontalComponent,
-    CardShadowComponent
+    CardShadowComponent,
+    StripHtmlTagsPipe
   ],
   imports: [
     CommonModule,
@@ -23,6 +26,7 @@ import { UserService } from './services/user.service';
   ],
   providers: [
     UserService,
+    FeedService
   ],
   exports: [
     HeaderComponent,
