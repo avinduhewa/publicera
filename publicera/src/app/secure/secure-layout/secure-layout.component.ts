@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SecureLayoutComponent implements OnInit {
 
-  navBarStatus: boolean = false;
+  navBarStatus = false;
   constructor() { }
 
   openNav() {
