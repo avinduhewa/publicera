@@ -27,6 +27,10 @@ export class LoginComponent implements OnInit {
       this.password = localStorage.getItem('password');
       this.rememberMeCheckBox = true;
     }
+
+    if (localStorage.getItem('user')) {
+      this.router.navigateByUrl('app');
+    }
   }
 
 

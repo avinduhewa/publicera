@@ -12,7 +12,15 @@ import { TalktoProComponent } from './secure-layout/talkto-pro/talkto-pro.compon
 
 import { SharedModule } from '../shared/shared.module';
 @NgModule({
-  declarations: [SecureLayoutComponent, KeepTrendsComponent, DigitalMarketingComponent, SocialMediaManagementComponent, CompetitorComponent, PostCreationComponent, TalktoProComponent],
+  declarations: [
+    SecureLayoutComponent,
+    KeepTrendsComponent,
+    DigitalMarketingComponent,
+    SocialMediaManagementComponent,
+    CompetitorComponent,
+    PostCreationComponent,
+    TalktoProComponent
+  ],
   imports: [
     CommonModule,
     SecureRoutingModule,

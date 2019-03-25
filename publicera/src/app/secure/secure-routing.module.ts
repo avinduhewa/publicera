@@ -10,9 +10,9 @@ import { TalktoProComponent } from './secure-layout/talkto-pro/talkto-pro.compon
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/secure', pathMatch: 'full' },
+  { path: 'app', redirectTo: '/app/trends', pathMatch: 'full' },
   {
-    path: '',
+    path: 'app',
     component: SecureLayoutComponent,
     children: [
       {
