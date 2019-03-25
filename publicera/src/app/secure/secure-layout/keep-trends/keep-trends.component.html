@@ -2,9 +2,8 @@
 
 <div class="card-section">
   <div class="row">
-
   </div>
-  <app-artcle-card></app-artcle-card>
+  <app-artcle-card *ngFor="let feed of feeds" [feed]="feed"></app-artcle-card>
 </div>
 
 
@@ -19,13 +18,12 @@
   <div class="tab-content">
     <div id="about" class="tab-pane fade in active show">
       <div class="">
-        <app-artcle-card-horizontal></app-artcle-card-horizontal>
-        <app-artcle-card-horizontal></app-artcle-card-horizontal>
+        <app-artcle-card-horizontal *ngFor="let feed of feeds" [feed]="feed"></app-artcle-card-horizontal>
       </div>
     </div>
     <div id="menu1" class="tab-pane fade">
       <div id="collection" class="tab-pane fade in">
-        <app-artcle-card-horizontal></app-artcle-card-horizontal>
+        <app-artcle-card-horizontal *ngFor="let feed of feeds" [feed]="feed"></app-artcle-card-horizontal>
       </div>
     </div>
   </div>
