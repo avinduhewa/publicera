@@ -11,6 +11,7 @@ import { PostCreationComponent } from './secure-layout/post-creation/post-creati
 import { TalktoProComponent } from './secure-layout/talkto-pro/talkto-pro.component';
 
 import { SharedModule } from '../shared/shared.module';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
 @NgModule({
   declarations: [
     SecureLayoutComponent,
@@ -24,7 +25,8 @@ import { SharedModule } from '../shared/shared.module';
   imports: [
     CommonModule,
     SecureRoutingModule,
-    SharedModule
+    SharedModule,
+    PdfViewerModule
   ]
 })
 export class SecureModule { }
