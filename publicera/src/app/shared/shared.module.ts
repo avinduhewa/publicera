@@ -10,6 +10,7 @@ import { CardShadowComponent } from './components/card-shadow/card-shadow.compon
 import { UserService } from './services/user.service';
 import { StripHtmlTagsPipe } from './pipes/strip-html-tags.pipe';
 import { FeedService } from './services/feed.service';
+import { FacebookService } from './services/facebook.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { FeedService } from './services/feed.service';
   ],
   providers: [
     UserService,
-    FeedService
+    FeedService,
+    FacebookService
   ],
   exports: [
     HeaderComponent,
