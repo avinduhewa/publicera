@@ -8,5 +8,15 @@
     "target": "https://firebasestorage.googleapis.com",
     "secure": false,
     "changeOrigin": true
+  },
+  "/oauth": {
+    "target": "https://graph.facebook.com",
+    "secure": false,
+    "changeOrigin": true
+  },
+  "/v2.9": {
+    "target": "https://graph.facebook.com",
+    "secure": false,
+    "changeOrigin": true
   }
 }
