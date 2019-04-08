@@ -4,7 +4,7 @@ import { LandingPageComponent } from './public/landing-page/landing-page.compone
 import { SecureLayoutComponent } from './secure/secure-layout/secure-layout.component';
 
 const routes: Routes = [
-  { path: '**', redirectTo: '/login', pathMatch: 'full' },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
 ];
 
 @NgModule({

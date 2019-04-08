@@ -8,8 +8,8 @@ import { FeedService } from 'src/app/shared/services/feed.service';
 })
 export class KeepTrendsComponent implements OnInit {
 
-  private feedUrl = 'https://techmeme.com/feed.xml';
-  private feeds: any;
+  feedUrl = 'https://techmeme.com/feed.xml';
+  feeds: any;
 
   constructor(
     private feedService: FeedService

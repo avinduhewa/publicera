@@ -1,0 +1,102 @@
+@charset "UTF-8";
+
+/*==============================
+=            section five            =
+==============================*/
+
+/* app section five */
+.app--section-footer{
+    background:#0B162C;
+    color: #737475;
+    text-align: center;
+    float: left;
+    width: 100%;
+    height: 200px;
+
+    
+
+    /* footer sections */
+    .footer-sections{
+
+        @media screen and (max-width: $big-mobile) {             
+            float: none;         
+        }
+
+        @media screen and (max-width: $small-mobile) {             
+            float: none;         
+        }
+
+
+        img {
+            margin-top: 50px;
+            width: 100px;
+        }
+
+        // footer actions
+        .footer-action{
+            margin-top: 50px;
+            text-align: left;
+            span {
+                font-weight: 600;
+                font-size: 20px;
+                color:  white;
+                text-align: left;
+            }
+
+            .contact-points { 
+                text-align: left;
+                color: white;
+                margin-top: 20px;
+            }
+           
+
+    
+        }
+    }
+
+    /* footer menue */
+    .footer-menu{
+        padding: 40px;
+        font-size: 11px;
+        font-weight: $font-weight-xl ;
+        float: left;
+        width: 100%;
+
+        // footer menu items
+       .footer-menu-item{
+        padding: 20px;
+        text-decoration: none;
+        color: #737475;
+
+        &:hover {
+            color: #2968e9 !important;
+            
+        }
+
+        &:focus {
+            color: #2968e9 !important;
+            
+        }
+     
+            @media screen and (max-width: $small-mobile) {             
+                float: left;
+                width: 100%;  
+                padding: 10px;   
+            }
+
+            @media screen and (max-width: $big-mobile) {             
+                float: left;
+                width: 100%;  
+                padding: 10px;   
+            }
+       }
+    }
+
+    // footer descriptions
+    .footer-description{
+        padding:40px 0px;
+        font-size: 11px;
+    }
+}
+
+/*=====  End of section five  ======*/
