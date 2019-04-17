@@ -46,6 +46,10 @@ import { EarningCardBackComponent } from './dashboard/earning-card/back-side/ear
 import { EarningPieChartComponent } from './dashboard/earning-card/back-side/earning-pie-chart.component';
 import { EarningLiveUpdateChartComponent } from './dashboard/earning-card/front-side/earning-live-update-chart.component';
 import { CountryOrdersMapService } from './dashboard/country-orders/map/country-orders-map.service';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { FacebookComponent } from './cms/facebook/facebook.component';
+import { TwitterComponent } from './cms/twitter/twitter.component';
+import { InstagramComponent } from './cms/instagram/instagram.component';
 
 @NgModule({
   declarations: [
@@ -86,6 +90,9 @@ import { CountryOrdersMapService } from './dashboard/country-orders/map/country-
     ProfessionalsComponent,
     GuidelinesComponent,
     DashboardComponent,
+    FacebookComponent,
+    TwitterComponent,
+    InstagramComponent,
   ],
   imports: [
     CommonModule,
@@ -96,6 +103,7 @@ import { CountryOrdersMapService } from './dashboard/country-orders/map/country-
     NgxEchartsModule,
     NgxChartsModule,
     LeafletModule,
+    PdfViewerModule
   ],
   providers: [
     CountryOrdersMapService

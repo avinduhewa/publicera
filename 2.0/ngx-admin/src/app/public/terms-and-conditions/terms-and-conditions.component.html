@@ -1,8 +1,8 @@
 <nb-layout>
-  <div class="row">
-    <pdf-viewer
-      src="/v0/b/publicera-d0009.appspot.com/o/terms-and-conditions.pdf?alt=media&token=a161ec7d-cea7-4f59-8378-41dad21b8b72"
-      [render-text]="true" [original-size]="false">
-    </pdf-viewer>
-  </div>
+  <nb-layout-column>
+    <div class="row">
+      <pdf-viewer [src]="pdf" [render-text]="true" [original-size]="false" style="width:100%">
+      </pdf-viewer>
+    </div>
+  </nb-layout-column>
 </nb-layout>
