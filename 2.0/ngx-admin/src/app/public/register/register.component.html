@@ -1,3 +1,248 @@
 <nb-layout>
-  Page works
+  <nb-layout-column>
+    <div class="row">
+      <div class="col-md-6">
+
+      </div>
+      <div class="col-md-6">
+
+      </div>
+    </div>
+    <!-- Feature slider start -->
+    <section class="feature-slider">
+
+      <!-- Slide items start -->
+      <div class="slide-items">
+
+        <img src="./assets/images/img1.png" alt="">
+
+        <!-- Slide item start -->
+        <div class="slide-item">
+
+          <!-- Text content start -->
+          <div class="slide-item--text-content">
+            <span class="icon mdi mdi-play-circle"></span>
+            <h3 class="main-heading">Enterprise resource planning made easy</h3>
+            <p class="secondary-paragraph">Organization tasks made easy, fast, and scalable.</p>
+          </div>
+          <!-- Text content end -->
+        </div>
+        <!-- Slide item end -->
+      </div>
+      <!-- Slide items end -->
+
+      <!-- Slide controller start -->
+
+      <!-- Slide controller end -->
+    </section>
+    <!-- Login - Feature slider end -->
+    <div class="onboarding-container">
+      <div class="container">
+
+        <div class="row">
+          <div class="onboarding-content">
+
+            <!-- Onboarding content header start -->
+            <div class="onboarding-content--header">
+              <h3 class="page-title">Join DigiExpress</h3>
+              <p class="page-description">Speed up your content with us.</p>
+            </div>
+            <!-- Onboarding content header end -->
+
+            <div class="onboarding-content--body">
+              <div *ngIf="loggedIn">
+                You are already logged in.
+                <button nbButton routerLink="/app" status="success">Continue</button>
+              </div>
+              <nb-stepper #stepper [linear]="false" *ngIf="!loggedIn">
+                <nb-step label="User Details">
+                  <form #nameForm="ngForm" class="step-container" [formGroup]="registerForm">
+                    <div class="input-group">
+                      <!-- <label>Name</label> -->
+                      <input type="text" placeholder="Enter your name" class="form-control" name="name" fullwidth
+                        required nbInput formControlName="name" (keyup)="change('first')"
+                        [status]="!registerForm.controls.name.valid && submitted ? 'danger' : ''">
+                    </div>
+                    <br>
+                    <div class="input-group">
+                      <input type="text" placeholder="Enter your email" class="form-control" name="email" fullwidth
+                        required nbInput formControlName="email" (keyup)="change('first')"
+                        [status]="!registerForm.controls.email.valid && submitted ? 'danger' : ''">
+                    </div>
+                    <br>
+                    <div class="input-group">
+                      <input type="text" placeholder="Enter username" class="form-control" name="username" fullwidth
+                        required nbInput formControlName="username" (keyup)="change('first')"
+                        [status]="!registerForm.controls.username.valid && submitted ? 'danger' : ''">
+                    </div>
+                    <br>
+                    <div class="input-group">
+                      <input type="password" placeholder="Enter password" class="form-control" name="password" fullwidth
+                        required nbInput formControlName="password" (keyup)="change('first')"
+                        [status]="!registerForm.controls.password.valid && submitted ? 'danger' : ''">
+                    </div>
+                    <br>
+                    <div class="input-group">
+                      <input type="password" placeholder="Re-enter password" class="form-control" name="confPassword"
+                        fullwidth required nbInput formControlName="confPassword" (keyup)="change('first')"
+                        [status]="!registerForm.controls.confPassword.valid && submitted ? 'danger' : ''">
+                    </div>
+                    <br>
+                    <button *ngIf="section1Valid" nbButton nbStepperNext>Next</button>
+                    <button *ngIf="!section1Valid" nbButton (click)="next('first')">Next</button>
+                  </form>
+                </nb-step>
+
+                <nb-step label="Company Details">
+                  <form #companyForm="ngForm" class="step-container" [formGroup]="registerForm">
+                    <div class="input-group">
+                      <!-- <label>Name</label> -->
+                      <input type="text" placeholder="Enter Company ID" class="form-control" name="companyId" fullwidth
+                        required nbInput formControlName="companyId" (keyup)="change('second')"
+                        [status]="!registerForm.controls.companyId.valid && submitted ? 'danger' : ''">
+                    </div>
+                    <br>
+                    <div class="input-group">
+                      <input type="text" placeholder="Enter Company Name" class="form-control" name="companyName"
+                        fullwidth required nbInput formControlName="companyName" (keyup)="change('second')"
+                        [status]="!registerForm.controls.companyName.valid && submitted ? 'danger' : ''">
+                    </div>
+                    <br>
+                    <div class="input-group">
+                      <input type="text" placeholder="Enter Industry" class="form-control" name="industry" fullwidth
+                        required nbInput formControlName="industry" (keyup)="change('second')"
+                        [status]="!registerForm.controls.industry.valid && submitted ? 'danger' : ''">
+                    </div>
+                    <br>
+                    <div class="input-group">
+                      <input type="number" placeholder="No. of Employees" class="form-control" name="noOfEmployees"
+                        fullwidth required nbInput formControlName="noOfEmployees" (keyup)="change('second')"
+                        [status]="!registerForm.controls.noOfEmployees.valid && submitted ? 'danger' : ''">
+                    </div>
+                    <br>
+                    <div class="input-group">
+                      <input type="number" placeholder="Company Value" class="form-control" name="companyValue"
+                        fullwidth required nbInput formControlName="companyValue" (keyup)="change('second')"
+                        [status]="!registerForm.controls.companyValue.valid && submitted ? 'danger' : ''">
+                    </div>
+                    <br>
+
+                    <div class="input-group">
+                      <input type="text" placeholder="Facebook Link" class="form-control" name="facebookLink" fullwidth
+                        required nbInput formControlName="facebookLink" (keyup)="change('second')"
+                        [status]="!registerForm.controls.facebookLink.valid && submitted ? 'danger' : ''">
+                    </div>
+                    <br>
+
+                    <div class="input-group">
+                      <input type="text" placeholder="Instagram Link" class="form-control" name="instagramLink"
+                        fullwidth required nbInput formControlName="instagramLink" (keyup)="change('second')"
+                        [status]="!registerForm.controls.instagramLink.valid && submitted ? 'danger' : ''">
+                    </div>
+                    <br>
+
+                    <div class="input-group">
+                      <input type="text" placeholder="Twitter Link" class="form-control" name="twitterLink" fullwidth
+                        required nbInput formControlName="twitterLink" (keyup)="change('second')"
+                        [status]="!registerForm.controls.twitterLink.valid && submitted ? 'danger' : ''">
+                    </div>
+                    <br>
+                    <button *ngIf="section2Valid" nbButton nbStepperNext>Next</button>
+                    <button *ngIf="!section2Valid" nbButton (click)="next('second')">Next</button>
+                  </form>
+                </nb-step>
+
+                <nb-step label="Select Package">
+                  <form #pricing="ngForm" [formGroup]="registerForm" class="step-container">
+                    <div class="input-group">
+                      <nb-radio-group formControlName="package" (click)="change('third')">
+                        <nb-radio value="silver">
+                          <nb-card>
+                            <nb-card-header>Silver Package</nb-card-header>
+                            <nb-card-body>
+                              <nb-list>
+                                <nb-list-item>
+                                  • Digital Marketing guide
+                                </nb-list-item>
+                                <nb-list-item>
+                                  • Connects Professionals
+                                </nb-list-item>
+                                <nb-list-item>
+                                  • Check Analytics
+                                </nb-list-item>
+                              </nb-list>
+                            </nb-card-body>
+                            <nb-card-footer>$49/month</nb-card-footer>
+                          </nb-card>
+                        </nb-radio>
+                        <nb-radio value="gold">
+                          <nb-card>
+                            <nb-card-header>Gold Package</nb-card-header>
+                            <nb-card-body>
+                              <nb-list>
+                                <nb-list-item>
+                                  Everything From Silver Package
+                                </nb-list-item>
+                                <nb-list-item>
+                                  • Create Post
+                                </nb-list-item>
+                                <nb-list-item>
+                                  • View Trends
+                                </nb-list-item>
+                              </nb-list>
+                            </nb-card-body>
+                            <nb-card-footer>$67/month</nb-card-footer>
+                          </nb-card>
+                        </nb-radio>
+                        <nb-radio value="platinum">
+                          <nb-card>
+                            <nb-card-header>Platinum Package</nb-card-header>
+                            <nb-card-body>
+                              <nb-list>
+                                <nb-list-item>
+                                  Everything From Gold Package
+                                </nb-list-item>
+                                <nb-list-item>
+                                  • View Suggestions
+                                </nb-list-item>
+                              </nb-list>
+                            </nb-card-body>
+                            <nb-card-footer>$106/month</nb-card-footer>
+                          </nb-card>
+                        </nb-radio>
+                      </nb-radio-group>
+                    </div>
+                    <br>
+                    <button *ngIf="section3Valid" nbButton nbStepperNext (click)="register()">Complete</button>
+                    <button *ngIf="!section3Valid" nbButton (click)="next('third')">Complete</button>
+                  </form>
+                </nb-step>
+
+                <nb-step [hidden]="true">
+                  <div class="step-container">
+                    <br>
+                    <div id="loading"></div>
+                    <h3>
+                      Registration in progress, you will be automatically logged in
+                    </h3>
+                    <br>
+                  </div>
+                </nb-step>
+              </nb-stepper>
+            </div>
+
+            <!-- Onboarding content footer start -->
+            <div class="onboarding-content--footer">
+              <p class="note">Already have an account?
+                <a routerLink="/login">Login instead</a>
+              </p>
+            </div>
+            <!-- Onboarding content footer end -->
+          </div>
+        </div>
+        <!-- ./row -->
+      </div>
+      <!-- ./container -->
+    </div>
+  </nb-layout-column>
 </nb-layout>

@@ -32,8 +32,9 @@ export class HeaderComponent implements OnInit {
       this.breadcrumb = this.router.routerState.snapshot.url.split('/').reverse()[0];
     });
     console.log();
-    this.userService.getUsers()
-      .subscribe((users: any) => this.user = users.nick);
+    this.user = JSON.parse(localStorage.getItem('user'));
+    // this.userService.getUsers()
+    //   .subscribe((users: any) => this.user = users.nick);
   }
 
   toggleSidebar(): boolean {
@@ -48,5 +49,10 @@ export class HeaderComponent implements OnInit {
 
   startSearch() {
     this.analyticsService.trackEvent('startSearch');
+  }
+
+  logout() {
+    localStorage.clear();
+    this.router.navigateByUrl('/');
   }
 }

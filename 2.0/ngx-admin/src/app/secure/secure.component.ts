@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NbMenuItem } from '@nebular/theme';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'secure',
@@ -31,6 +32,8 @@ export class SecureComponent implements OnInit {
           link: '/app/trends/popular',
         },
       ],
+      hidden: false,
+      expanded: true
     },
     {
       title: 'Content Management',
@@ -49,11 +52,14 @@ export class SecureComponent implements OnInit {
           link: '/app/cms/twitter',
         },
       ],
+      hidden: false,
+      expanded: true
     },
     {
       title: 'Connect Professionals',
       icon: 'nb-phone',
       link: '/app/professionals',
+      hidden: false
     },
     {
       title: 'Guidelines',
@@ -76,12 +82,27 @@ export class SecureComponent implements OnInit {
           link: '/app/guidelines/productDevelopment',
         },
       ],
+      expanded: true
     },
   ];
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit() {
+    const userType = localStorage.getItem('userType');
+    if (userType === 'silver') {
+      this.menu[2].hidden = true;
+      this.menu[3].hidden = true;
+    }
+    if (userType === 'gold') {
+      this.menu[3].hidden = true;
+    }
+
+    if (!localStorage.getItem('user')) {
+      this.router.navigateByUrl('/');
+    }
   }
 
 }

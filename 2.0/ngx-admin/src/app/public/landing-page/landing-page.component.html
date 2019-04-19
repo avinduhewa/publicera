@@ -1,11 +1,11 @@
 <nb-layout>
   <nb-layout-header>
-    <div>
+    <div routerLink="/">
       <h1>DigiExpress</h1>
     </div>
     <div class="pull-right">
-      <button nbButton outline status="info" routerLink="/app">Register</button>
-      <button nbButton outline status="info" routerLink="/app">Login</button>
+      <button nbButton outline status="info" routerLink="/register">Register</button>
+      <button nbButton outline status="info" routerLink="/login">Login</button>
     </div>
   </nb-layout-header>
 
@@ -16,8 +16,8 @@
         <div class="text-section-one">
         </div>
         <div class="text-section-two">
-          Lorem ipsum dolor sit amet<br>
-          consectetur
+          Elevate your reach <br>
+          through Digital Marketing
         </div>
         <!-- <div class="text-section-three">
           Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam
@@ -30,25 +30,18 @@
       <div class="app--seaction-portpholio">
         <div class="section-title">
           <h1>
-            Lorem ipsum dolor sit amet
+            Expand your digital marketing knowledge
           </h1>
-          <p>Here’s some of our recent work
-
-          </p>
+          <button nbButton status="success">Start Now</button>
         </div>
-
         <div class="body-section">
+
           <div class="full-section">
             <div class="row">
               <div class="col-md-6">
                 <div class="project-section left">
                   <div class="project-tagline">
-                    Lorem ipsum dolor sit amet
-                  </div>
-                  <div class="project-des">
-                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-                    doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
-                    veritatis et quasi architecto beatae vitae dicta
+                    Helping through technology
                   </div>
                 </div>
               </div>
@@ -70,17 +63,47 @@
               <div class="col-md-6">
                 <div class="project-section right">
                   <div class="project-tagline">
-                    Lorem ipsum dolor sit amet
-                  </div>
-                  <div class="project-des">
-                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-                    doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
-                    veritatis et quasi architecto beatae vitae dicta
+                    Stay connected and updated,keep up with trends
                   </div>
                 </div>
               </div>
             </div>
           </div>
+
+          <div class="full-section">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="project-section left">
+                  <div class="project-tagline">
+                    Create content & extend your reach better
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 image-section">
+                <div class="image-container lookbook">
+                  <img src="./assets/images/img1.png" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="full-section blue">
+            <div class="row reversed">
+              <div class="col-md-6 image-section ">
+                <div class="image-container">
+                  <img src="./assets/images/img1.png" alt="">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="project-section right">
+                  <div class="project-tagline">
+                    Increase brand awareness & boost online presence
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </header>
@@ -89,5 +112,8 @@
   <nb-layout-footer>
     <span class="created-by">Created by <b><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">Thareef
           Bin Ubaid</a></b> 2019</span>
+    <hr>
+    <a routerLink="/privacy-policy" style="margin-right:10px">Privacy Policy </a>
+    <a routerLink="/terms-and-conditions"> Terms and Conditions</a>
   </nb-layout-footer>
 </nb-layout>
