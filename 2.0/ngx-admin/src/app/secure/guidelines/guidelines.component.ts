@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'guidelines',
+  selector: 'ngx-guidelines',
   templateUrl: './guidelines.component.html',
-  styleUrls: ['./guidelines.component.scss']
+  styleUrls: ['./guidelines.component.scss'],
 })
 export class GuidelinesComponent implements OnInit {
 

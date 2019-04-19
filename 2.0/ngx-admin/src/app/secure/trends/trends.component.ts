@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FeedService } from '../../shared/services/feed.service';
 
 @Component({
-  selector: 'trends',
+  selector: 'ngx-trends',
   templateUrl: './trends.component.html',
-  styleUrls: ['./trends.component.scss']
+  styleUrls: ['./trends.component.scss'],
 })
 export class TrendsComponent implements OnInit {
   array = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 11, 1, 1, 2];
@@ -12,7 +12,7 @@ export class TrendsComponent implements OnInit {
   feeds: any;
 
   constructor(
-    private feedService: FeedService
+    private feedService: FeedService,
   ) { }
 
   ngOnInit() {
@@ -23,10 +23,11 @@ export class TrendsComponent implements OnInit {
     this.feedService.getFeedContent(this.feedUrl)
       .subscribe(
         (feed: any) => {
-          console.log(feed.items);
           this.feeds = feed.items;
         },
-        error => console.log(error));
+        () => {
+          // error
+        });
   }
 
   navigate(url) {

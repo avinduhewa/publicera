@@ -8,20 +8,20 @@ import { FacebookService } from './services/facebook.service';
 
 @NgModule({
   declarations: [
-    StripHtmlTagsPipe
+    StripHtmlTagsPipe,
   ],
   imports: [
     CommonModule,
-    PdfViewerModule
+    PdfViewerModule,
   ],
   providers: [
     FeedService,
     UserService,
-    FacebookService
+    FacebookService,
   ],
   exports: [
     StripHtmlTagsPipe,
-    PdfViewerModule
-  ]
+    PdfViewerModule,
+  ],
 })
 export class SharedModule { }

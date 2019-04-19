@@ -8,7 +8,7 @@ describe('TrendsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TrendsComponent ]
+      declarations: [ TrendsComponent ],
     })
     .compileComponents();
   }));

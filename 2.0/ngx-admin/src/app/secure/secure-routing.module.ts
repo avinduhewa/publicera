@@ -20,13 +20,13 @@ const routes: Routes = [
       { path: 'cms/:type', component: CmsComponent },
       { path: 'professionals', component: ProfessionalsComponent },
       { path: 'guidelines', redirectTo: 'guidlines/all' },
-      { path: 'guidelines/:type', component: GuidelinesComponent }
-    ]
-  }
+      { path: 'guidelines/:type', component: GuidelinesComponent },
+    ],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class SecureRoutingModule { }

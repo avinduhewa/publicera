@@ -8,7 +8,7 @@ describe('CmsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CmsComponent ]
+      declarations: [ CmsComponent ],
     })
     .compileComponents();
   }));

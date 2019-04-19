@@ -11,11 +11,11 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'privacy-policy', component: PrivacyPolicyComponent },
-  { path: 'terms-and-conditions', component: TermsAndConditionsComponent }
+  { path: 'terms-and-conditions', component: TermsAndConditionsComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class PublicRoutingModule { }

@@ -34,7 +34,9 @@ import { CountryOrdersComponent } from './dashboard/country-orders/country-order
 import { CountryOrdersMapComponent } from './dashboard/country-orders/map/country-orders-map.component';
 import { CountryOrdersChartComponent } from './dashboard/country-orders/chart/country-orders-chart.component';
 import { ECommerceVisitorsAnalyticsComponent } from './dashboard/visitors-analytics/visitors-analytics.component';
-import { ECommerceVisitorsAnalyticsChartComponent } from './dashboard/visitors-analytics/visitors-analytics-chart/visitors-analytics-chart.component';
+import {
+  ECommerceVisitorsAnalyticsChartComponent,
+} from './dashboard/visitors-analytics/visitors-analytics-chart/visitors-analytics-chart.component';
 import { ECommerceVisitorsStatisticsComponent } from './dashboard/visitors-analytics/visitors-statistics/visitors-statistics.component';
 import { ECommerceLegendChartComponent } from './dashboard/legend-chart/legend-chart.component';
 import { ECommerceUserActivityComponent } from './dashboard/user-activity/user-activity.component';
@@ -103,11 +105,11 @@ import { InstagramComponent } from './cms/instagram/instagram.component';
     NgxEchartsModule,
     NgxChartsModule,
     LeafletModule,
-    PdfViewerModule
+    PdfViewerModule,
   ],
   providers: [
-    CountryOrdersMapService
-  ]
+    CountryOrdersMapService,
+  ],
 })
 
 export class SecureModule { }

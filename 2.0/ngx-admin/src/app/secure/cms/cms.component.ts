@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'cms',
+  selector: 'ngx-cms',
   templateUrl: './cms.component.html',
-  styleUrls: ['./cms.component.scss']
+  styleUrls: ['./cms.component.scss'],
 })
 export class CmsComponent implements OnInit {
   private allowedTypes = ['facebook', 'twitter', 'instagram'];
@@ -12,7 +12,7 @@ export class CmsComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
   ) { }
 
   ngOnInit() {
@@ -20,10 +20,10 @@ export class CmsComponent implements OnInit {
       if (this.allowedTypes.indexOf(params.type) !== -1) {
         this.type = params.type;
       } else {
-        this.router.navigate(['/app/cms', 'facebook'])
+        this.router.navigate(['/app/cms', 'facebook']);
       }
 
-    })
+    });
   }
 
 }

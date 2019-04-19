@@ -1,9 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 import { NbMenuService, NbSidebarService } from '@nebular/theme';
-import { UserData } from '../../../@core/data/users';
 import { AnalyticsService } from '../../../@core/utils';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'ngx-header',
@@ -20,21 +19,16 @@ export class HeaderComponent implements OnInit {
   constructor(
     private sidebarService: NbSidebarService,
     private menuService: NbMenuService,
-    private userService: UserData,
     private analyticsService: AnalyticsService,
     private router: Router,
-    private route: ActivatedRoute
   ) {
   }
 
   ngOnInit() {
-    this.router.events.subscribe(res => {
+    this.router.events.subscribe(() => {
       this.breadcrumb = this.router.routerState.snapshot.url.split('/').reverse()[0];
     });
-    console.log();
     this.user = JSON.parse(localStorage.getItem('user'));
-    // this.userService.getUsers()
-    //   .subscribe((users: any) => this.user = users.nick);
   }
 
   toggleSidebar(): boolean {

@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, from } from 'rxjs';
+import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class UserService {
 
@@ -12,12 +12,10 @@ export class UserService {
   ) { }
 
   register(request): Observable<any> {
-    console.log('register invoked', request);
     return this.http.post(`/dev/user/create`, request);
   }
 
   getUser(email): Observable<any> {
-    console.log('get user invoked', email);
     return this.http.get(`/dev/user/get/${email}`);
   }
 
@@ -36,9 +34,9 @@ export class UserService {
       socialMedia: {
         facebook: form.facebookLink,
         instagram: form.instagramLink,
-        twitter: form.twitterLink
+        twitter: form.twitterLink,
       },
-      userType: form.package
-    }
+      userType: form.package,
+    };
   }
 }

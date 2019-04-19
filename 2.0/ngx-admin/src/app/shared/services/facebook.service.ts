@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class FacebookService {
 
@@ -12,13 +12,11 @@ export class FacebookService {
   ) { }
 
   getFacebookAccessToken(): Observable<any> {
-    console.log('get access token invoked');
     return this.http.get(
       `/oauth/access_token?client_id=1233979890091351&client_secret=1c80b71b377433c0c5fe6bf00f457b06&grant_type=client_credentials`);
   }
 
   getPosts(pageName, accessToken): Observable<any> {
-    console.log('get posts invoked');
     return this.http.get(
       `/v2.9/${pageName}/posts?access_token=${accessToken}`);
   }

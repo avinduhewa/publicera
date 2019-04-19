@@ -1,29 +1,29 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'twitter',
+  selector: 'ngx-twitter',
   templateUrl: './twitter.component.html',
-  styleUrls: ['./twitter.component.scss']
+  styleUrls: ['./twitter.component.scss'],
 })
 export class TwitterComponent implements OnInit {
-  keywordString = ''
-  keywordArray: string[] = []
+  keywordString = '';
+  keywordArray: string[] = [];
 
-  writeUp = ''
+  writeUp = '';
 
   wordCombinations: string[] = [
     'Digital',
     'Digital Marketing',
     'Forensic Marketing',
-    'Digital DeepDive'
-  ]
+    'Digital DeepDive',
+  ];
 
   trendingHashTags: string[] = [
     'Something',
     'Idk',
     'Hello',
-    'Help'
-  ]
+    'Help',
+  ];
 
 
   constructor() { }
@@ -32,16 +32,16 @@ export class TwitterComponent implements OnInit {
   }
 
   extractKeywords() {
-    let tempString = ''
+    let tempString = '';
     this.keywordArray = this.keywordString.split(/[ ,]+/).join(',').split(',');
     this.keywordArray.forEach((elem, i) => {
       this.keywordArray[i] = elem.trim();
       if (this.keywordArray[i].length === 0 && i !== this.keywordArray.length) {
-        this.keywordArray.splice(i, 1)
+        this.keywordArray.splice(i, 1);
       } else {
-        tempString += this.keywordArray[i] + ', '
+        tempString += this.keywordArray[i] + ', ';
       }
-    })
+    });
     this.keywordString = tempString;
   }
 

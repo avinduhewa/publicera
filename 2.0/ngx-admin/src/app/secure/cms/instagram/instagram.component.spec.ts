@@ -8,7 +8,7 @@ describe('InstagramComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ InstagramComponent ]
+      declarations: [ InstagramComponent ],
     })
     .compileComponents();
   }));

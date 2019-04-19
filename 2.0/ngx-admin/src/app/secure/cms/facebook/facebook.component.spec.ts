@@ -8,7 +8,7 @@ describe('FacebookComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FacebookComponent ]
+      declarations: [ FacebookComponent ],
     })
     .compileComponents();
   }));

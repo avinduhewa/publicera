@@ -16,7 +16,7 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
     CommonModule,
     PublicRoutingModule,
     ThemeModule,
-    PdfViewerModule
-  ]
+    PdfViewerModule,
+  ],
 })
 export class PublicModule { }

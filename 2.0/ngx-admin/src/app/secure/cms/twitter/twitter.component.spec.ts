@@ -8,7 +8,7 @@ describe('TwitterComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TwitterComponent ]
+      declarations: [ TwitterComponent ],
     })
     .compileComponents();
   }));

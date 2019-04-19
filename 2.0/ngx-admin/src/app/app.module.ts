@@ -36,7 +36,7 @@ import { SecureModule } from './secure/secure.module';
     ThemeModule.forRoot(),
     CoreModule.forRoot(),
     PublicModule,
-    SecureModule
+    SecureModule,
   ],
   bootstrap: [AppComponent],
   providers: [

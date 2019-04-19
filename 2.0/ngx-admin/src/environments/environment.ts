@@ -16,6 +16,6 @@ export const environment = {
     databaseURL: 'https://publicera-d0009.firebaseio.com',
     projectId: 'publicera-d0009',
     storageBucket: 'publicera-d0009.appspot.com',
-    messagingSenderId: '316315780962'
-  }
+    messagingSenderId: '316315780962',
+  },
 };

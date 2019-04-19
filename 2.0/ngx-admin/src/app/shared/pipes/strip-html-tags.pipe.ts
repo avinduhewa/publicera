@@ -1,7 +1,7 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'stripHtmlTags'
+  name: 'stripHtmlTags',
 })
 export class StripHtmlTagsPipe implements PipeTransform {
   tagBody = '(?:[^"\'>]|"[^"]*"|\'[^\']*\')*';

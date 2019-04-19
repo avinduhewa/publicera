@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import { UserService } from '../../shared/services/user.service';
 import { AngularFireAuth } from '@angular/fire/auth';
 
 @Component({
-  selector: 'login',
+  selector: 'ngx-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
   email: string;
@@ -16,7 +16,6 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private route: ActivatedRoute,
     private afAuth: AngularFireAuth,
     private userService: UserService,
   ) { }
@@ -39,17 +38,15 @@ export class LoginComponent implements OnInit {
     this.syncLocalStorage();
     this.afAuth.auth.signInWithEmailAndPassword(this.email, this.password)
       .then(res => {
-        console.log(res);
         this.errorMsg = null;
         this.userService.getUser(this.email).subscribe(response => {
           localStorage.setItem('userId', response._id);
           localStorage.setItem('user', JSON.stringify(response));
-          localStorage.setItem('userType', response.userType)
+          localStorage.setItem('userType', response.userType);
           this.router.navigateByUrl('/app');
         });
       })
       .catch(err => {
-        console.error(err);
         this.errorMsg = 'Something went wrong while logging in, Please try again';
       });
   }

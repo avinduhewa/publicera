@@ -3,9 +3,9 @@ import { NbMenuItem } from '@nebular/theme';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'secure',
+  selector: 'ngx-secure-component',
   templateUrl: './secure.component.html',
-  styleUrls: ['./secure.component.scss']
+  styleUrls: ['./secure.component.scss'],
 })
 export class SecureComponent implements OnInit {
   menu: NbMenuItem[] = [
@@ -33,7 +33,7 @@ export class SecureComponent implements OnInit {
         },
       ],
       hidden: false,
-      expanded: true
+      expanded: true,
     },
     {
       title: 'Content Management',
@@ -53,13 +53,13 @@ export class SecureComponent implements OnInit {
         },
       ],
       hidden: false,
-      expanded: true
+      expanded: true,
     },
     {
       title: 'Connect Professionals',
       icon: 'nb-phone',
       link: '/app/professionals',
-      hidden: false
+      hidden: false,
     },
     {
       title: 'Guidelines',
@@ -82,12 +82,12 @@ export class SecureComponent implements OnInit {
           link: '/app/guidelines/productDevelopment',
         },
       ],
-      expanded: true
+      expanded: true,
     },
   ];
 
   constructor(
-    private router: Router
+    private router: Router,
   ) { }
 
   ngOnInit() {
