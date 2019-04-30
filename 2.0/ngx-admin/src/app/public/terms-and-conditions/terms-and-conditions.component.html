@@ -1,0 +1,18 @@
+<nb-layout>
+  <nb-layout-header>
+    <div routerLink="/">
+      <h1>DigiExpress</h1>
+    </div>
+    <div class="pull-right">
+      <button nbButton outline status="info" routerLink="/register">Register</button>
+      <button nbButton outline status="info" routerLink="/login">Login</button>
+    </div>
+  </nb-layout-header>
+  <nb-layout-column>
+    <h1>Terms and Conditions</h1>
+    <div class="row">
+      <pdf-viewer src="../../../assets/docs/tac.pdf" [render-text]="true" [original-size]="false" style="width:100%">
+      </pdf-viewer>
+    </div>
+  </nb-layout-column>
+</nb-layout>
