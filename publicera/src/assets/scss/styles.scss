@@ -1,0 +1,34 @@
+@charset "UTF-8";
+
+/*!
+ * Phoenix Dashboard Toolkit v2.0
+ * Copyright 2017 ~ Amplifyn (Pvt) Ltd.
+ * UI Author: Kasun Harshana - @skyyalone
+ */
+
+// Core base colors, fonts, and variables
+@import "base/color-palatte";
+@import "base/fonts";
+@import "base/app-variables";
+@import "base/variables";
+
+// Core Mixins and Extends
+@import "utils/mixins";
+@import "utils/twbs-mixins";
+@import "utils/extends";
+@import "utils/functions";
+
+// Core CSS
+@import "base/scaffolding";
+@import "base/type";
+
+// Layout
+@import "layout/app-header";
+@import "layout/app-container";
+@import "layout/app-footer";
+@import "layout/app-wrapper";
+
+
+
+// Components
+@import "components/**/*";

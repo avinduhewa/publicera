@@ -1,0 +1,38 @@
+{
+  "hosting": {
+    "public": "public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ],
+    "redirects": [
+      {
+        "source": "/dev/user{,/**}",
+        "destination": "https://x29ges3hmb.execute-api.ap-southeast-1.amazonaws.com",
+        "type": 301
+      },
+      {
+        "source": "/v0/b{,/**}",
+        "destination": "https://firebasestorage.googleapis.com",
+        "type": 301
+      },
+      {
+        "source": "/oauth{,/**}",
+        "destination": "https://graph.facebook.com",
+        "type": 301
+      },
+      {
+        "source": "/v2.9{,/**}",
+        "destination": "https://graph.facebook.com",
+        "type": 301
+      }
+    ]
+  }
+}

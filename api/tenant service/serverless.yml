@@ -1,0 +1,38 @@
+service: publicera-${self:custom.path}-service
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  region: ap-southeast-1
+  profile: smokingdots
+  environment:
+    db_url: mongodb://admin:password123@ds159185.mlab.com:59185/publicera
+    db_name: publicera
+
+custom:
+  path: tenant
+
+functions:
+  getTenant:
+    handler: functions/handler.getTenant
+    events:
+      - schedule: rate(2 minutes)
+      - http:
+          path: ${self:custom.path}/get/{id}
+          method: get
+
+  updateTenant:
+    handler: functions/handler.updateTenant
+    events:
+      - schedule: rate(2 minutes)
+      - http:
+          path: ${self:custom.path}/update/{id}
+          method: post
+
+  createTenant:
+    handler: functions/handler.createTenant
+    events:
+      - schedule: rate(2 minutes)
+      - http:
+          path: ${self:custom.path}/create
+          method: post

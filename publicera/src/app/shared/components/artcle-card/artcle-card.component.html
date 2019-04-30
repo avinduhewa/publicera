@@ -1,0 +1,10 @@
+<div class="card" (click)="navigate()">
+  <img class="card-img-top" [src]="feed.thumbnail" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">{{feed.title | stripHtmlTags}} - {{feed.author | stripHtmlTags}}</h5>
+    <div class="profile-holder">
+      <!-- <img src="../../../../assets/images/profPic.png" alt=""> -->
+      <span>{{feed.description | stripHtmlTags}}</span>
+    </div>
+  </div>
+</div>

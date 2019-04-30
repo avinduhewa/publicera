@@ -1,0 +1,22 @@
+<div class="card--rect">
+  <div class="container">
+    <div class="row-Const">
+      <div class="main-img-cont">
+        <div class="image-container">
+          <img [src]="feed.thumbnail" alt="">
+        </div>
+      </div>
+      <div class="main-img-cont">
+        <div class="text-container">
+          <div class="des">
+            {{feed.description | stripHtmlTags}}
+          </div>
+          <span>
+            {{feed.title | stripHtmlTags}} - {{feed.author | stripHtmlTags}}
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<hr>

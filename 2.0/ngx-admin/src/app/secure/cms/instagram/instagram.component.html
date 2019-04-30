@@ -1,0 +1,35 @@
+<h1>Instagram Content Generation</h1>
+
+<nb-card>
+  <nb-card-header>Type Keyword</nb-card-header>
+  <nb-card-body>
+    <textarea nbInput fullWidth placeholder="comma seperated keywords ( i.e: digital,marketing )" name="keyword"
+      [(ngModel)]="keywordString" (change)="extractKeywords()"></textarea>
+  </nb-card-body>
+</nb-card>
+
+<nb-card>
+  <nb-card-header>Write Up</nb-card-header>
+  <nb-card-body>
+    <textarea nbInput fullWidth placeholder="Your content goes here." rows=7 name="writeUp"
+      [(ngModel)]="writeUp"></textarea>
+  </nb-card-body>
+</nb-card>
+
+<nb-card>
+  <nb-card-header>Top word combinations</nb-card-header>
+  <nb-card-body>
+    <span class="spacing" *ngFor="let word of wordCombinations; let i = index">
+      <button nbButton shape="round" outline size="small" status="info" (click)="appendWord(word)">{{word}}</button>
+    </span>
+  </nb-card-body>
+</nb-card>
+
+<nb-card>
+  <nb-card-header>Trending # tags</nb-card-header>
+  <nb-card-body>
+    <span class="spacing" *ngFor="let hashtag of trendingHashTags; let i = index">
+      <button nbButton shape="round" outline size="small" status="info">#{{hashtag}}</button>
+    </span>
+  </nb-card-body>
+</nb-card>
