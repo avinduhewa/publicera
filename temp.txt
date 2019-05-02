@@ -1,0 +1,11 @@
+2.0
+9783319282794-c2.pdf
+Docs
+LICENSE
+README.md
+api
+firebase.json
+portal
+public
+publicera
+temp.txt
