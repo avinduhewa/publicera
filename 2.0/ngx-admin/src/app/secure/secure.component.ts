@@ -16,6 +16,19 @@ export class SecureComponent implements OnInit {
       home: true,
     },
     {
+      title: 'Profile',
+      icon: 'nb-home',
+      link: '/app/dashboard',
+      home: true,
+      hidden: true,
+    },
+    {
+      title: 'My Earnings',
+      icon: 'nb-bar-chart',
+      link: '/app/dashboard',
+      hidden: true,
+    },
+    {
       title: 'FEATURES',
       group: true,
     },
@@ -93,11 +106,20 @@ export class SecureComponent implements OnInit {
   ngOnInit() {
     const userType = localStorage.getItem('userType');
     if (userType === 'silver') {
-      this.menu[2].hidden = true;
-      this.menu[3].hidden = true;
+      this.menu[4].hidden = true;
+      this.menu[5].hidden = true;
     }
     if (userType === 'gold') {
-      this.menu[3].hidden = true;
+      this.menu[5].hidden = true;
+    }
+
+    if (userType === 'freelancer') {
+      this.menu[0].hidden = true;
+      this.menu[1].hidden = false;
+      this.menu[2].hidden = false;
+      this.menu[4].hidden = true;
+      this.menu[5].hidden = true;
+      this.menu[7].hidden = true;
     }
 
     if (!localStorage.getItem('user')) {
