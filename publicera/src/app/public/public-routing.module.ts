@@ -13,7 +13,7 @@ const routes: Routes = [
     component: LoginnLayoutComponent,
     children: [
       {
-        path: 'login',
+        path: '1',
         component: LoginComponent
       },
       {

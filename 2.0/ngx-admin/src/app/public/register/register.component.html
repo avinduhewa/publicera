@@ -14,7 +14,7 @@
       <!-- Slide items start -->
       <div class="slide-items">
 
-        <img src="./assets/images/img1.png" alt="">
+        <img src="../../../assets/images/dashhboard.png" alt="">
 
         <!-- Slide item start -->
         <div class="slide-item">
@@ -52,7 +52,7 @@
             <div class="onboarding-content--body">
               <div *ngIf="loggedIn">
                 You are already logged in.
-                <button nbButton routerLink="/app" status="success">Continue</button>
+                <button nbButton routerLink="/app">Continue</button>
               </div>
               <nb-stepper #stepper [linear]="false" *ngIf="!loggedIn">
                 <nb-step label="User Details">
@@ -234,7 +234,7 @@
             <!-- Onboarding content footer start -->
             <div class="onboarding-content--footer">
               <p class="note">Already have an account?
-                <a routerLink="/login">Login instead</a>
+                <a routerLink="/login" style="color:#b57fff">Login instead</a>
               </p>
             </div>
             <!-- Onboarding content footer end -->
