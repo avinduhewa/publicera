@@ -39,10 +39,17 @@ export class FacebookComponent implements OnInit {
     if (this.keywordString.toLowerCase().indexOf('digital') > -1 ||
       this.keywordString.toLowerCase().indexOf('marketing') > -1) {
       this.wordCombinations = [
-        'Optimization', 'online', 'reach', 'beyond', 'worldly', 'motion'
+        'Optimization', 'online', 'reach', 'beyond', 'worldly', 'motion' // you can add more stuff here
       ];
       this.trendingHashTags = [
         'digitaltrends', 'SEO', 'Optimization', 'OnlineMarketing', 'reachbeyond'
+      ];
+    } else if(this.keywordString.toLowerCase().indexOf('something') > -1){
+      this.wordCombinations = [
+        'Optimization'
+      ];
+      this.trendingHashTags = [
+        'digitaltrends', 
       ];
     } else {
       this.wordCombinations = [], this.trendingHashTags = [];
