@@ -12,17 +12,9 @@ export class FacebookComponent implements OnInit {
   writeUp = '';
 
   wordCombinations: string[] = [
-    'Digital',
-    'Digital Marketing',
-    'Forensic Marketing',
-    'Digital DeepDive',
   ];
 
   trendingHashTags: string[] = [
-    'Something',
-    'Idk',
-    'Hello',
-    'Help',
   ];
 
 
@@ -43,6 +35,18 @@ export class FacebookComponent implements OnInit {
       }
     });
     this.keywordString = tempString;
+
+    if (this.keywordString.toLowerCase().indexOf('digital') > -1 ||
+      this.keywordString.toLowerCase().indexOf('marketing') > -1) {
+      this.wordCombinations = [
+        'Optimization', 'online', 'reach', 'beyond', 'worldly', 'motion'
+      ];
+      this.trendingHashTags = [
+        'digitaltrends', 'SEO', 'Optimization', 'OnlineMarketing', 'reachbeyond'
+      ];
+    } else {
+      this.wordCombinations = [], this.trendingHashTags = [];
+    }
   }
 
   appendWord(word) {

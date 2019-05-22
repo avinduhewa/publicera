@@ -40,6 +40,7 @@ export class LoginComponent implements OnInit {
       .then(res => {
         this.errorMsg = null;
         this.userService.getUser(this.email).subscribe(response => {
+          console.log('RESPONSE', response);
           localStorage.setItem('userId', response._id);
           localStorage.setItem('user', JSON.stringify(response));
           localStorage.setItem('userType', response.userType);

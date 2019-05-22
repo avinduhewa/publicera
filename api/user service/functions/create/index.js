@@ -31,7 +31,6 @@ const createUser = (callback) => {
     shared.insertData = shared.createUser;
     callback(null, shared.createUser)
   }
-
 }
 
 
