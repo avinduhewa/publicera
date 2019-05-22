@@ -11,6 +11,11 @@
         "source": "**",
         "destination": "/index.html"
       }
+<<<<<<< HEAD
+    ]
+  }
+}
+=======
     ],
     "redirects": [
       {
@@ -36,3 +41,4 @@
     ]
   }
 }
+>>>>>>> c84d48f5913887b35c08e193da2a4a0bc5a1f08a

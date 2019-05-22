@@ -24,8 +24,7 @@ $mobile-sm: 375px;
   padding: 120px 80px;
   width: $feature-slider-width;
   height: 100%;
-  color: white;
-  background: #388FFF;
+  background: linear-gradient(to right, #b57fff, #8a7fff);
   transition: width .1s ease-in-out;
 
   @media screen and (max-width: ($desktop-lg - 1)) {
@@ -89,6 +88,7 @@ $mobile-sm: 375px;
         font-size: 20px;
         font-weight: 400;
         line-height: 32px;
+        color: white;
       }
 
       // Secondary paragraph
@@ -99,6 +99,7 @@ $mobile-sm: 375px;
         font-size: 14px;
         font-weight: 300;
         line-height: 24px;
+        color: white;
       }
     }
   }
@@ -277,7 +278,7 @@ $mobile-sm: 375px;
 
 
 .btn {
-    background: #388FFF;
+    background: linear-gradient(to right, #b57fff, #8a7fff);;
     border-radius: 55px;
     border-style: solid;
     border-width: 1px;

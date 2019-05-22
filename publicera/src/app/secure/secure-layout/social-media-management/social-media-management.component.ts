@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+<<<<<<< HEAD
+=======
 import { FacebookService } from 'src/app/shared/services/facebook.service';
+>>>>>>> c84d48f5913887b35c08e193da2a4a0bc5a1f08a
 
 @Component({
   selector: 'app-social-media-management',
@@ -7,6 +10,14 @@ import { FacebookService } from 'src/app/shared/services/facebook.service';
   styleUrls: ['./social-media-management.component.scss']
 })
 export class SocialMediaManagementComponent implements OnInit {
+<<<<<<< HEAD
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+=======
   accessToken: any;
 
   constructor(
@@ -30,4 +41,5 @@ export class SocialMediaManagementComponent implements OnInit {
       console.log('Response', res);
     });
   }
+>>>>>>> c84d48f5913887b35c08e193da2a4a0bc5a1f08a
 }
