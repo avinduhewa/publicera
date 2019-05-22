@@ -1,5 +1,5 @@
 <nb-layout>
-  <nb-layout-header>
+  <!-- <nb-layout-header>
     <div routerLink="/">
       <h1>DigiExpress</h1>
     </div>
@@ -7,32 +7,136 @@
       <button nbButton outline status="info" routerLink="/register">Register</button>
       <button nbButton outline status="info" routerLink="/login">Login</button>
     </div>
-  </nb-layout-header>
+  </nb-layout-header> -->
 
-  <nb-layout-column>
+  <nb-layout-column style="padding:0px">
     <header id="fullpage">
 
-      <div class="app-section-two section">
-        <div class="text-section-one">
+      <div class="nav-container">
+        <div class="logo-holder">
+          <img src="../../../assets/images/logo.svg" alt="test">
         </div>
-        <div class="text-section-two">
-          Elevate your reach <br>
-          through Digital Marketing
+        <div class="content-holder">
+          <div class="action-btn">
+            <a href="#" class="btn" target="_blank" class="btn btn-primary" data-toggle="modal"
+              data-target="#exampleModal">
+              Register
+            </a>
+          </div>
+          <div class="action-btn">
+            <a href="#" class="btn" target="_blank" class="btn btn-primary" data-toggle="modal"
+              data-target="#exampleModal">
+              Login
+            </a>
+          </div>
         </div>
-        <!-- <div class="text-section-three">
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam
-          rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
-          explicabo.
-        </div> -->
+      </div>
+      <div class="full-section grey">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="project-section right">
+              <div class="brand-logos">
+                <div class="logo-items">
+                </div>
+              </div>
+              <div class="project-name">
+                Expand your digital marketing knowledge
+              </div>
+              <h1 class="project-tagline">
+                Elevate your reach
+                through<br> Digital Marketing
+              </h1>
+              <h2 class="project-des">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua.
+              </h2>
+              <!-- <div class="action-btn">
+                <a href="#" class="btn" target="_blank" class="btn btn-primary" data-toggle="modal"
+                  data-target="#exampleModal">
+                  Find Out How
+                </a>
+              </div> -->
+
+              <!-- Modal -->
+              <div class="watermark">
+              </div>
+            </div>
+
+
+
+          </div>
+          <div class="col-md-6 image-section ">
+            <div class="card-container">
+              <span>
+                Expand your <br> knowledge
+
+              </span>
+              <span class="buttons">
+                View Digital Marketing Guide
+
+              </span>
+            </div>
+            <div class="card-container-background red">
+            </div>
+            <div class="card-container-background blue">
+            </div>
+            <div class="card-container-background yellow">
+            </div>
+          </div>
+        </div>
       </div>
 
+      <!-- <div class="app-section-what">
+        <div class="section-title">
+          <h1>
+            Expand your digital marketing knowledge
+          </h1>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 item">
+              <div class="image-container">
+                <img src="./assets/images/img1.png" alt="">
+              </div>
+              <div class="text-container">
+                Helping through technology
+              </div>
+            </div>
+            <div class="col-md-6 item">
+              <div class="image-container">
+                <img src="./assets/images/img1.png" alt="">
+              </div>
+              <div class="text-container">
+                Stay connected and updated,keep up with trends
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 item">
+              <div class="image-container">
+                <img src="./assets/images/img1.png" alt="">
+              </div>
+              <div class="text-container">
+                Create content & extend your reach better
+              </div>
+            </div>
+            <div class="col-md-6 item">
+              <div class="image-container">
+                <img src="./assets/images/img1.png" alt="">
+              </div>
+              <div class="text-container">
+                Increase brand awareness & boost online presence
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
 
       <div class="app--seaction-portpholio">
         <div class="section-title">
           <h1>
             Expand your digital marketing knowledge
           </h1>
-          <button nbButton status="success">Start Now</button>
         </div>
         <div class="body-section">
 
@@ -43,11 +147,16 @@
                   <div class="project-tagline">
                     Helping through technology
                   </div>
+                  <div class="project-tagline-two">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et
+                    dolore magna aliqua.
+                  </div>
                 </div>
               </div>
               <div class="col-md-6 image-section">
                 <div class="image-container lookbook">
-                  <img src="./assets/images/img1.png" alt="">
+                  <img src="../../../assets/images/dashhboard.png" alt="">
                 </div>
               </div>
             </div>
@@ -57,13 +166,18 @@
             <div class="row reversed">
               <div class="col-md-6 image-section ">
                 <div class="image-container">
-                  <img src="./assets/images/img1.png" alt="">
+                  <img src="../../../assets/images/latestTrend.png" alt="">
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="project-section right">
                   <div class="project-tagline">
                     Stay connected and updated,keep up with trends
+                  </div>
+                  <div class="project-tagline-two">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et
+                    dolore magna aliqua.
                   </div>
                 </div>
               </div>
@@ -77,11 +191,16 @@
                   <div class="project-tagline">
                     Create content & extend your reach better
                   </div>
+                  <div class="project-tagline-two">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et
+                    dolore magna aliqua.
+                  </div>
                 </div>
               </div>
               <div class="col-md-6 image-section">
                 <div class="image-container lookbook">
-                  <img src="./assets/images/img1.png" alt="">
+                  <img src="../../../assets/images/facebookContent.png" alt="">
                 </div>
               </div>
             </div>
@@ -91,13 +210,18 @@
             <div class="row reversed">
               <div class="col-md-6 image-section ">
                 <div class="image-container">
-                  <img src="./assets/images/img1.png" alt="">
+                  <img src="../../../assets/images/guide.png" alt="">
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="project-section right">
                   <div class="project-tagline">
                     Increase brand awareness & boost online presence
+                  </div>
+                  <div class="project-tagline-two">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et
+                    dolore magna aliqua.
                   </div>
                 </div>
               </div>
