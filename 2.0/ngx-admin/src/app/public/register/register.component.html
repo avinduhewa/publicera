@@ -53,6 +53,8 @@
               <div *ngIf="loggedIn">
                 You are already logged in.
                 <button nbButton routerLink="/app">Continue</button>
+                <br>
+                <button nbButton (click)="logout()">Logout</button>
               </div>
               <nb-stepper #stepper [linear]="false" *ngIf="!loggedIn">
                 <nb-step label="User Details">

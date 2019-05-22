@@ -47,6 +47,12 @@ export class RegisterComponent implements OnInit {
     if (user) this.loggedIn = true;
   }
 
+
+  logout() {
+    localStorage.clear();
+    this.loggedIn = false;
+  }
+
   change(type) {
     if (this.submitted) {
       this.next(type);

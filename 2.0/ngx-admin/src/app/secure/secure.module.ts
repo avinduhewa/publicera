@@ -52,6 +52,8 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { FacebookComponent } from './cms/facebook/facebook.component';
 import { TwitterComponent } from './cms/twitter/twitter.component';
 import { InstagramComponent } from './cms/instagram/instagram.component';
+import { UpgradeComponent } from './upgrade/upgrade.component';
+import { NgxPayPalModule } from 'ngx-paypal';
 
 @NgModule({
   declarations: [
@@ -95,6 +97,7 @@ import { InstagramComponent } from './cms/instagram/instagram.component';
     FacebookComponent,
     TwitterComponent,
     InstagramComponent,
+    UpgradeComponent,
   ],
   imports: [
     CommonModule,
@@ -106,6 +109,7 @@ import { InstagramComponent } from './cms/instagram/instagram.component';
     NgxChartsModule,
     LeafletModule,
     PdfViewerModule,
+    NgxPayPalModule,
   ],
   providers: [
     CountryOrdersMapService,

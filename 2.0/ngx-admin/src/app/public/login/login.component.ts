@@ -9,6 +9,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
+  loggedIn = false;
   email: string;
   password: string;
   errorMsg: string;
@@ -28,11 +29,18 @@ export class LoginComponent implements OnInit {
       this.rememberMeCheckBox = true;
     }
 
-    if (localStorage.getItem('user')) {
-      this.router.navigateByUrl('app');
-    }
+    // if (localStorage.getItem('user')) {
+    //   this.router.navigateByUrl('app');
+    // }
+
+    const user = JSON.parse(localStorage.getItem('user'));
+    if (user) this.loggedIn = true;
   }
 
+  logout() {
+    localStorage.clear();
+    this.loggedIn = false;
+  }
 
   login() {
     this.syncLocalStorage();
