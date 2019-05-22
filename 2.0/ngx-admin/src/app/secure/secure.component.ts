@@ -97,6 +97,16 @@ export class SecureComponent implements OnInit {
       ],
       expanded: true,
     },
+    {
+      title: 'Settings',
+      group: true,
+    },
+    {
+      title: 'Upgrade',
+      icon: 'nb-arrow-up',
+      link: '/app/upgrade',
+      hidden: false,
+    },
   ];
 
   constructor(
@@ -106,11 +116,19 @@ export class SecureComponent implements OnInit {
   ngOnInit() {
     const userType = localStorage.getItem('userType');
     if (userType === 'silver') {
-      this.menu[4].hidden = true;
-      this.menu[5].hidden = true;
+      // this.menu[4].hidden = true;
+      // this.menu[5].hidden = true;
+      this.menu[4].icon = 'nb-locked';
+      this.menu[4].children = null;
+      this.menu[4].url = '/app/upgrade';
+      this.menu[5].icon = 'nb-locked';
+      this.menu[5].children = null;
+      this.menu[5].url = '/app/upgrade';
     }
     if (userType === 'gold') {
-      this.menu[5].hidden = true;
+      this.menu[5].icon = 'nb-locked';
+      this.menu[5].children = null;
+      this.menu[5].url = '/app/upgrade';
     }
 
     if (userType === 'freelancer') {

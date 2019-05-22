@@ -1,0 +1,55 @@
+<div class="row">
+  <nb-card class="col-md-3 m-2">
+    <nb-card-header>Silver Package</nb-card-header>
+    <nb-card-body>
+      <nb-list>
+        <nb-list-item>
+          • Digital Marketing guide
+        </nb-list-item>
+        <nb-list-item>
+          • Connects Professionals
+        </nb-list-item>
+        <nb-list-item>
+          • Check Analytics
+        </nb-list-item>
+      </nb-list>
+    </nb-card-body>
+    <button nbButton status="primary" (click)="setUpgrade('silver')">Upgrade - $49/month</button>
+    <br>
+  </nb-card>
+  <nb-card class="col-md-3 m-2">
+    <nb-card-header>Gold Package</nb-card-header>
+    <nb-card-body>
+      <nb-list>
+        <nb-list-item>
+          Everything From Silver Package
+        </nb-list-item>
+        <nb-list-item>
+          • Create Post
+        </nb-list-item>
+        <nb-list-item>
+          • View Trends
+        </nb-list-item>
+      </nb-list>
+    </nb-card-body>
+    <button nbButton status="primary" (click)="setUpgrade('gold')">Upgrade - $67/month</button>
+    <br>
+  </nb-card>
+  <nb-card class="col-md-3 m-2">
+    <nb-card-header>Platinum Package</nb-card-header>
+    <nb-card-body>
+      <nb-list>
+        <nb-list-item>
+          Everything From Gold Package
+        </nb-list-item>
+        <nb-list-item>
+          • View Suggestions
+        </nb-list-item>
+      </nb-list>
+    </nb-card-body>
+    <button nbButton status="primary" (click)="setUpgrade('platinum')">Upgrade - $106/month</button>
+    <br>
+  </nb-card>
+</div>
+
+<ngx-paypal *ngIf="showPayment" [config]="payPalConfig"></ngx-paypal>

@@ -6,6 +6,7 @@ import { CmsComponent } from './cms/cms.component';
 import { ProfessionalsComponent } from './professionals/professionals.component';
 import { GuidelinesComponent } from './guidelines/guidelines.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { UpgradeComponent } from './upgrade/upgrade.component';
 
 const routes: Routes = [
   { path: 'app', redirectTo: 'app/dashboard' },
@@ -21,6 +22,7 @@ const routes: Routes = [
       { path: 'professionals', component: ProfessionalsComponent },
       { path: 'guidelines', redirectTo: 'guidlines/all' },
       { path: 'guidelines/:type', component: GuidelinesComponent },
+      { path: 'upgrade', component: UpgradeComponent },
     ],
   },
 ];

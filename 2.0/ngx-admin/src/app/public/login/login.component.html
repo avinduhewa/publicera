@@ -52,8 +52,14 @@
 
             <!-- Onboarding content body start -->
             <div class="onboarding-content--body">
+              <div *ngIf="loggedIn">
+                You are already logged in.
+                <button nbButton routerLink="/app">Continue</button>
+                <br>
+                <button nbButton (click)="logout()">Logout</button>
+              </div>
               <!-- Form start -->
-              <form class="form login-form">
+              <form class="form login-form" *ngIf="!loggedIn">
 
                 <div class="form-group">
                   <label for="Email">Email</label>
@@ -70,7 +76,8 @@
 
                 <div class="form-group misc-box">
                   <div class="form-check remember-me">
-                    <nb-checkbox status="success" (change)="rememberMe()" [(ngModel)]="rememberMeCheckBox">Remember me
+                    <nb-checkbox status="success" (change)="rememberMe()" name="rememberMe"
+                      [(ngModel)]="rememberMeCheckBox">Remember me
                     </nb-checkbox>
                   </div>
 
