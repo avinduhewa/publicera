@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+declare var Skype;
 
 @Component({
   selector: 'ngx-professionals',
@@ -6,10 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./professionals.component.scss'],
 })
 export class ProfessionalsComponent implements OnInit {
+  currentFreelancer = 'echo123';
 
   constructor() { }
 
   ngOnInit() {
+
+  }
+
+  setFreelancer(type) {
+    this.currentFreelancer = type;
+  }
+
+  call() {
+    window.open('https://grv.to/@avinduhewa', '_blank');
   }
 
 }

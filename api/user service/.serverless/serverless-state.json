@@ -12,7 +12,7 @@
       "runtime": "nodejs8.10",
       "profile": "smokingdots",
       "environment": {
-        "db_url": "mongodb://admin:password123@ds159185.mlab.com:59185/publicera",
+        "db_url": "mongodb://admin:password123@ds159185.mlab.com:59185",
         "db_name": "publicera"
       },
       "versionFunctions": true,
@@ -146,7 +146,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/publicera-user-service/dev/1552932471243-2019-03-18T18:07:51.243Z/publicera-user-service.zip"
+                "S3Key": "serverless/publicera-user-service/dev/1558855041825-2019-05-26T07:17:21.825Z/publicera-user-service.zip"
               },
               "FunctionName": "publicera-user-service-dev-getUser",
               "Handler": "functions/handler.getUser",
@@ -161,7 +161,7 @@
               "Timeout": 6,
               "Environment": {
                 "Variables": {
-                  "db_url": "mongodb://admin:password123@ds159185.mlab.com:59185/publicera",
+                  "db_url": "mongodb://admin:password123@ds159185.mlab.com:59185",
                   "db_name": "publicera"
                 }
               }
@@ -171,14 +171,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "GetUserLambdaVersionaXZDpFV4Rp9fxlqPrVUJoUKVw6eAp1SxbfD7m0GV10s": {
+          "GetUserLambdaVersion4jELSfE5oqBjswHZple0UkbzDy6VDAWi0E2Iq2dgc": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "GetUserLambdaFunction"
               },
-              "CodeSha256": "nnYqd42d/YEAR5yBNH9HggKRNQq4224uEIiC01aJmHo="
+              "CodeSha256": "NyAzSNY6UoFPcavddIS1Iaq2wS8QxA4wQka7rg7AC8U="
             }
           },
           "UpdateUserLambdaFunction": {
@@ -188,7 +188,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/publicera-user-service/dev/1552932471243-2019-03-18T18:07:51.243Z/publicera-user-service.zip"
+                "S3Key": "serverless/publicera-user-service/dev/1558855041825-2019-05-26T07:17:21.825Z/publicera-user-service.zip"
               },
               "FunctionName": "publicera-user-service-dev-updateUser",
               "Handler": "functions/handler.updateUser",
@@ -203,7 +203,7 @@
               "Timeout": 6,
               "Environment": {
                 "Variables": {
-                  "db_url": "mongodb://admin:password123@ds159185.mlab.com:59185/publicera",
+                  "db_url": "mongodb://admin:password123@ds159185.mlab.com:59185",
                   "db_name": "publicera"
                 }
               }
@@ -213,14 +213,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "UpdateUserLambdaVersionPtdH3t6YvL7BQGBOgj3KrP9ViIFtxAY65swAunFGaPs": {
+          "UpdateUserLambdaVersionVpRTVF2Alj4cclulmBLIAxoNVfM7qM7i13SgfD5zRo": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "UpdateUserLambdaFunction"
               },
-              "CodeSha256": "nnYqd42d/YEAR5yBNH9HggKRNQq4224uEIiC01aJmHo="
+              "CodeSha256": "NyAzSNY6UoFPcavddIS1Iaq2wS8QxA4wQka7rg7AC8U="
             }
           },
           "CreateUserLambdaFunction": {
@@ -230,7 +230,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/publicera-user-service/dev/1552932471243-2019-03-18T18:07:51.243Z/publicera-user-service.zip"
+                "S3Key": "serverless/publicera-user-service/dev/1558855041825-2019-05-26T07:17:21.825Z/publicera-user-service.zip"
               },
               "FunctionName": "publicera-user-service-dev-createUser",
               "Handler": "functions/handler.createUser",
@@ -245,7 +245,7 @@
               "Timeout": 6,
               "Environment": {
                 "Variables": {
-                  "db_url": "mongodb://admin:password123@ds159185.mlab.com:59185/publicera",
+                  "db_url": "mongodb://admin:password123@ds159185.mlab.com:59185",
                   "db_name": "publicera"
                 }
               }
@@ -255,14 +255,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "CreateUserLambdaVersionGcuISYXU7huoxoLFb0nALppitw0gBE8Fp8NGlAmI": {
+          "CreateUserLambdaVersionZpQEmsZR5jwNp8thKmAKnoS5YbPfhNWodcLEKz6cU": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "CreateUserLambdaFunction"
               },
-              "CodeSha256": "nnYqd42d/YEAR5yBNH9HggKRNQq4224uEIiC01aJmHo="
+              "CodeSha256": "NyAzSNY6UoFPcavddIS1Iaq2wS8QxA4wQka7rg7AC8U="
             }
           },
           "GetUserEventsRuleSchedule1": {
@@ -621,7 +621,7 @@
               "MethodResponses": []
             }
           },
-          "ApiGatewayDeployment1552932471286": {
+          "ApiGatewayDeployment1558855041879": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -786,19 +786,19 @@
           "GetUserLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "GetUserLambdaVersionaXZDpFV4Rp9fxlqPrVUJoUKVw6eAp1SxbfD7m0GV10s"
+              "Ref": "GetUserLambdaVersion4jELSfE5oqBjswHZple0UkbzDy6VDAWi0E2Iq2dgc"
             }
           },
           "UpdateUserLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "UpdateUserLambdaVersionPtdH3t6YvL7BQGBOgj3KrP9ViIFtxAY65swAunFGaPs"
+              "Ref": "UpdateUserLambdaVersionVpRTVF2Alj4cclulmBLIAxoNVfM7qM7i13SgfD5zRo"
             }
           },
           "CreateUserLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "CreateUserLambdaVersionGcuISYXU7huoxoLFb0nALppitw0gBE8Fp8NGlAmI"
+              "Ref": "CreateUserLambdaVersionZpQEmsZR5jwNp8thKmAKnoS5YbPfhNWodcLEKz6cU"
             }
           },
           "ServiceEndpoint": {
@@ -924,7 +924,7 @@
     "artifact": "/Users/avinduhewa/Documents/projects/publicera/api/user service/.serverless/publicera-user-service.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/publicera-user-service/dev/1552932471243-2019-03-18T18:07:51.243Z",
+    "artifactDirectoryName": "serverless/publicera-user-service/dev/1558855041825-2019-05-26T07:17:21.825Z",
     "artifact": "publicera-user-service.zip"
   }
 }

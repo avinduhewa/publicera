@@ -25,41 +25,30 @@
   </div>
 </div>
 
-<div class="row">
-  <div class="col-xxl-7">
-    <ngx-ecommerce-charts></ngx-ecommerce-charts>
-  </div>
-
-  <div class="col-xxl-5">
-    <div class="row">
-      <div class="col-md-6">
-        <ngx-profit-card></ngx-profit-card>
-      </div>
-      <div class="col-md-6">
-        <ngx-earning-card></ngx-earning-card>
-      </div>
-    </div>
-
-    <ngx-traffic-reveal-card></ngx-traffic-reveal-card>
+<div class="row mb-4 pull-right" *ngIf="userType!=='freelancer'">
+  <div class="col-md-4">
+    <nb-select placeholder="Select Social Media" [(selected)]="selectedSocialMedia"
+      nbTooltip="Select your social media here">
+      <nb-option value="facebook">Facebook</nb-option>
+      <nb-option value="instagram">Instagram</nb-option>
+      <nb-option value="twitter" (click)="signIn()">Twitter</nb-option>
+    </nb-select>
   </div>
 </div>
 
-<div class="row">
-  <!-- <div class="col-xxl-9">
-    <ngx-country-orders></ngx-country-orders>
-  </div> -->
-
+<div class="row" *ngIf="selectedSocialMedia==='twitter' && userType!=='freelancer'">
   <div class="col-xxl-12">
-    <ngx-progress-section></ngx-progress-section>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-xxl-9">
     <ngx-ecommerce-visitors-analytics></ngx-ecommerce-visitors-analytics>
   </div>
 
-  <div class="col-xxl-3">
+
+</div>
+
+<div class="row" *ngIf="selectedSocialMedia==='twitter' && userType!=='freelancer'">
+  <div class="col-xxl-6">
     <ngx-user-activity></ngx-user-activity>
+  </div>
+  <div class="col-xxl-6">
+    <ngx-traffic-reveal-card></ngx-traffic-reveal-card>
   </div>
 </div>

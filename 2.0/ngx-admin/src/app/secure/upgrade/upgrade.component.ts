@@ -7,6 +7,7 @@ import { IPayPalConfig, ICreateOrderRequest } from 'ngx-paypal';
   styleUrls: ['./upgrade.component.scss'],
 })
 export class UpgradeComponent implements OnInit {
+  userType: string;
   showPayment = false;
   public payPalConfig?: IPayPalConfig;
   showSuccess;
@@ -17,6 +18,7 @@ export class UpgradeComponent implements OnInit {
 
   ngOnInit(): void {
     this.initConfig();
+    this.userType = localStorage.getItem('userType');
   }
 
   private initConfig(): void {

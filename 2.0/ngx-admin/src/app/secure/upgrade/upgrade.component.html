@@ -14,7 +14,9 @@
         </nb-list-item>
       </nb-list>
     </nb-card-body>
-    <button nbButton status="primary" (click)="setUpgrade('silver')">Upgrade - $49/month</button>
+    <button *ngIf="userType!=='silver'" nbButton status="primary" (click)="setUpgrade('silver')">Upgrade -
+      $49/month</button>
+    <button *ngIf="userType==='silver'" nbButton status="info">Current Package</button>
     <br>
   </nb-card>
   <nb-card class="col-md-3 m-2">
@@ -32,7 +34,9 @@
         </nb-list-item>
       </nb-list>
     </nb-card-body>
-    <button nbButton status="primary" (click)="setUpgrade('gold')">Upgrade - $67/month</button>
+    <button *ngIf="userType!=='gold'" nbButton status="primary" (click)="setUpgrade('gold')">Upgrade -
+      $67/month</button>
+    <button *ngIf="userType==='gold'" nbButton status="info">Current Package</button>
     <br>
   </nb-card>
   <nb-card class="col-md-3 m-2">
@@ -47,7 +51,9 @@
         </nb-list-item>
       </nb-list>
     </nb-card-body>
-    <button nbButton status="primary" (click)="setUpgrade('platinum')">Upgrade - $106/month</button>
+    <button *ngIf="userType!=='platinum'" nbButton status="primary" (click)="setUpgrade('platinum')">Upgrade -
+      $106/month</button>
+    <button *ngIf="userType==='platinum'" nbButton status="info">Current Package</button>
     <br>
   </nb-card>
 </div>

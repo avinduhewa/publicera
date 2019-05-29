@@ -2,11 +2,15 @@ import { Injectable } from '@angular/core';
 import { of as observableOf, Observable } from 'rxjs';
 import { PeriodsService } from './periods.service';
 import { OutlineData, VisitorsAnalyticsData } from '../data/visitors-analytics';
+import { ApiService } from '../../shared/services/api.service';
 
 @Injectable()
 export class VisitorsAnalyticsService extends VisitorsAnalyticsData {
 
-  constructor(private periodService: PeriodsService) {
+  constructor(
+    private periodService: PeriodsService,
+    private apiService: ApiService,
+  ) {
     super();
   }
 
@@ -19,21 +23,18 @@ export class VisitorsAnalyticsService extends VisitorsAnalyticsData {
     241, 204, 166, 130, 98, 71, 49, 32, 20, 13, 9,
   ];
   private outerLinePoints: number[] = [
-    85, 71, 59, 50, 45, 42, 41, 44 , 58, 88,
-    136 , 199, 267, 326, 367, 391, 400, 397,
-    376, 319, 200, 104, 60, 41, 36, 37, 44,
-    55, 74, 100 , 131, 159, 180, 193, 199, 200,
-    195, 184, 164, 135, 103, 73, 50, 33, 22, 15, 11,
+    0, 0, 0, 0, 0, 0, 0,
   ];
-  private generateOutlineLineData(): OutlineData[] {
-    const months = this.periodService.getMonths();
+
+  private generateOutlineLineData(param): OutlineData[] {
+    this.getTwitterAnalytics(param);
+    const months = this.periodService.getWeeks();
     const outerLinePointsLength = this.outerLinePoints.length;
     const monthsLength = months.length;
 
     return this.outerLinePoints.map((p, index) => {
-      const monthIndex = Math.round(index / 4);
       const label = (index % Math.round(outerLinePointsLength / monthsLength) === 0)
-        ? months[monthIndex]
+        ? months[index]
         : '';
 
       return {
@@ -47,11 +48,28 @@ export class VisitorsAnalyticsService extends VisitorsAnalyticsData {
     return observableOf(this.innerLinePoints);
   }
 
-  getOutlineLineChartData(): Observable<OutlineData[]> {
-    return observableOf(this.generateOutlineLineData());
+  getOutlineLineChartData(param): Observable<OutlineData[]> {
+    return observableOf(this.generateOutlineLineData(param));
   }
 
   getPieChartData(): Observable<number> {
     return observableOf(this.pieChartValue);
+  }
+
+  getTwitterAnalytics(param) {
+    const week = this.periodService.getWeeks();
+    const currentDateObj = new Date();
+    const currentDate = currentDateObj.getDate()
+    param.statuses.forEach(item => {
+      const date = new Date(item.created_at);
+      const day = date.getDay();
+      const index = this.periodService.getIndex(day);
+      let addData = true;
+      if (index === 5 && date.getDate() !== currentDate) addData = false;
+      if (index === 6) addData = false;
+      if (addData) {
+        this.outerLinePoints[index] += 1;
+      }
+    });
   }
 }

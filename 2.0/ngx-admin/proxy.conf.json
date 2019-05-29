@@ -14,9 +14,30 @@
     "secure": false,
     "changeOrigin": true
   },
+  "/twitter/oauth2": {
+    "target": "https://api.twitter.com",
+    "secure": false,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/twitter": ""
+    }
+  },
   "/v2.9": {
     "target": "https://graph.facebook.com",
     "secure": false,
     "changeOrigin": true
+  },
+  "/1.1": {
+    "target": "https://api.twitter.com",
+    "secure": false,
+    "changeOrigin": true
+  },
+  "/twitter-local": {
+    "target": "http://localhost:3000",
+    "secure": false,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/twitter-local": ""
+    }
   }
 }

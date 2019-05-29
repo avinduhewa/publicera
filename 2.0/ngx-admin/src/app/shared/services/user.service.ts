@@ -39,4 +39,10 @@ export class UserService {
       userType: form.package,
     };
   }
+
+  updateUser(userObj): Observable<any> {
+    let id = userObj._id;
+    delete userObj._id;
+    return this.http.post(`/dev/user/update/${id}`, userObj);
+  }
 }
