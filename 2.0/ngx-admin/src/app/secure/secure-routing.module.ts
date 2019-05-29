@@ -7,6 +7,7 @@ import { ProfessionalsComponent } from './professionals/professionals.component'
 import { GuidelinesComponent } from './guidelines/guidelines.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UpgradeComponent } from './upgrade/upgrade.component';
+import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [
   { path: 'app', redirectTo: 'app/dashboard' },
@@ -23,6 +24,7 @@ const routes: Routes = [
       { path: 'guidelines', redirectTo: 'guidlines/all' },
       { path: 'guidelines/:type', component: GuidelinesComponent },
       { path: 'upgrade', component: UpgradeComponent },
+      { path: 'profile', component: ProfileComponent },
     ],
   },
 ];

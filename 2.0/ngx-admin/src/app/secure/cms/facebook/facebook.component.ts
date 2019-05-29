@@ -45,7 +45,7 @@ export class FacebookComponent implements OnInit {
         'digitaltrends', 'SEO', 'Optimization', 'OnlineMarketing', 'reachbeyond'
       ];
     } else {
-      this.wordCombinations = [], this.trendingHashTags = [];
+      this.wordCombinations = ['Word Combinations Not Found'], this.trendingHashTags = ['HashTags Not Found'];
     }
   }
 

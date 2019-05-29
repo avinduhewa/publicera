@@ -1,0 +1,63 @@
+<div class="row" *ngIf="user">
+  <div class="col-md-12">
+    <nb-card>
+      <nb-card-header>Profile Details</nb-card-header>
+      <nb-card-body>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" nbInput fullWidth fieldSize="medium" placeholder="Name" [(ngModel)]="user.name">
+        </div>
+        <div class="form-group">
+          <label for="name">Username</label>
+          <input type="text" nbInput fullWidth fieldSize="medium" placeholder="Username" [(ngModel)]="user.username">
+        </div>
+        <div class="form-group">
+          <label for="name">Email</label>
+          <input type="text" nbInput fullWidth fieldSize="medium" placeholder="Email" [(ngModel)]="user.email">
+        </div>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>
+<div class="row" *ngIf="user">
+  <div class="col-md-12">
+    <nb-card>
+      <nb-card-header>Facebook Related Information</nb-card-header>
+      <nb-card-body>
+        <input type="text" nbInput fullWidth fieldSize="medium" placeholder="Facebook Page Url"
+          [(ngModel)]="user.socialMedia.facebook">
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>
+<div class="row" *ngIf="user">
+  <div class="col-md-12">
+    <nb-card>
+      <nb-card-header>Instagram Related Information</nb-card-header>
+      <nb-card-body>
+        <input type="text" nbInput fullWidth fieldSize="medium" placeholder="Instagram Profile Url"
+          [(ngModel)]="user.socialMedia.instagram">
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>
+<div class="row" *ngIf="user">
+  <div class="col-md-12">
+    <nb-card>
+      <nb-card-header>Twitter Related Information</nb-card-header>
+      <nb-card-body>
+        <input type="text" nbInput fullWidth fieldSize="medium" placeholder="Twitter Profile Url"
+          [(ngModel)]="user.socialMedia.twitter">
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <nb-card>
+      <nb-card-footer>
+        <button nbButton status="success" (click)="saveChanges()">Save Changes</button>
+      </nb-card-footer>
+    </nb-card>
+  </div>
+</div>

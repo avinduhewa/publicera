@@ -20,7 +20,6 @@ export class ECommerceVisitorsAnalyticsChartComponent implements AfterViewInit, 
   private alive = true;
 
   @Input() chartData: {
-    innerLine: number[];
     outerLine: OutlineData[];
   };
 
@@ -29,7 +28,7 @@ export class ECommerceVisitorsAnalyticsChartComponent implements AfterViewInit, 
   echartsIntance: any;
 
   constructor(private theme: NbThemeService,
-              private layoutService: LayoutService) {
+    private layoutService: LayoutService) {
     this.layoutService.onChangeLayoutSize()
       .pipe(
         takeWhile(() => this.alive),
@@ -47,7 +46,7 @@ export class ECommerceVisitorsAnalyticsChartComponent implements AfterViewInit, 
         const eTheme: any = config.variables.visitors;
 
         this.setOptions(eTheme);
-    });
+      });
   }
 
   setOptions(eTheme) {
@@ -125,7 +124,6 @@ export class ECommerceVisitorsAnalyticsChartComponent implements AfterViewInit, 
         },
       },
       series: [
-        this.getInnerLine(eTheme),
         this.getOuterLine(eTheme),
       ],
     };
@@ -142,9 +140,9 @@ export class ECommerceVisitorsAnalyticsChartComponent implements AfterViewInit, 
         },
         emphasis: {
           color: '#ffffff',
-            borderColor: eTheme.itemBorderColor,
-            borderWidth: 2,
-            opacity: 1,
+          borderColor: eTheme.itemBorderColor,
+          borderWidth: 2,
+          opacity: 1,
         },
       },
       lineStyle: {
@@ -179,43 +177,43 @@ export class ECommerceVisitorsAnalyticsChartComponent implements AfterViewInit, 
   }
 
   getInnerLine(eTheme) {
-    return {
-      type: 'line',
-      smooth: true,
-      symbolSize: 20,
-      tooltip: {
-        show: false,
-        extraCssText: '',
-      },
-      itemStyle: {
-        normal: {
-          opacity: 0,
-        },
-        emphasis: {
-          opacity: 0,
-        },
-      },
-      lineStyle: {
-        normal: {
-          width: eTheme.innerLineWidth,
-          type: eTheme.innerLineStyle,
-          color: new echarts.graphic.LinearGradient(0, 0, 0, 1),
-        },
-      },
-      areaStyle: {
-        normal: {
-          color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-            offset: 0,
-            color: eTheme.innerAreaGradFrom,
-          }, {
-            offset: 1,
-            color: eTheme.innerAreaGradTo,
-          }]),
-          opacity: 1,
-        },
-      },
-      data: this.chartData.innerLine,
-    };
+    // return {
+    //   type: 'line',
+    //   smooth: true,
+    //   symbolSize: 20,
+    //   tooltip: {
+    //     show: false,
+    //     extraCssText: '',
+    //   },
+    //   itemStyle: {
+    //     normal: {
+    //       opacity: 0,
+    //     },
+    //     emphasis: {
+    //       opacity: 0,
+    //     },
+    //   },
+    //   lineStyle: {
+    //     normal: {
+    //       width: eTheme.innerLineWidth,
+    //       type: eTheme.innerLineStyle,
+    //       color: new echarts.graphic.LinearGradient(0, 0, 0, 1),
+    //     },
+    //   },
+    //   areaStyle: {
+    //     normal: {
+    //       color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+    //         offset: 0,
+    //         color: eTheme.innerAreaGradFrom,
+    //       }, {
+    //         offset: 1,
+    //         color: eTheme.innerAreaGradTo,
+    //       }]),
+    //       opacity: 1,
+    //     },
+    //   },
+    //   data: this.chartData.innerLine,
+    // };
   }
 
   onChartInit(echarts) {

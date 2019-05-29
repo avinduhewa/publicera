@@ -1,8 +1,9 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { takeWhile } from 'rxjs/operators';
 import { NbThemeService } from '@nebular/theme';
 import { OutlineData, VisitorsAnalyticsData } from '../../../@core/data/visitors-analytics';
 import { forkJoin } from 'rxjs';
+import { ApiService } from '../../../shared/services/api.service';
 
 
 @Component({
@@ -10,46 +11,58 @@ import { forkJoin } from 'rxjs';
   styleUrls: ['./visitors-analytics.component.scss'],
   templateUrl: './visitors-analytics.component.html',
 })
-export class ECommerceVisitorsAnalyticsComponent implements OnDestroy {
+export class ECommerceVisitorsAnalyticsComponent implements OnDestroy, OnInit {
+  loading = true;
   private alive = true;
 
   pieChartValue: number;
-  chartLegend: {iconColor: string; title: string}[];
-  visitorsAnalyticsData: { innerLine: number[]; outerLine: OutlineData[]; };
+  chartLegend: { iconColor: string; title: string }[];
+  visitorsAnalyticsData: { outerLine: OutlineData[]; };
+  twitterUser;
 
-  constructor(private themeService: NbThemeService,
-              private visitorsAnalyticsChartService: VisitorsAnalyticsData) {
+  constructor(
+    private themeService: NbThemeService,
+    private visitorsAnalyticsChartService: VisitorsAnalyticsData,
+    private apiService: ApiService,
+  ) {
     this.themeService.getJsTheme()
       .pipe(takeWhile(() => this.alive))
       .subscribe(theme => {
         this.setLegendItems(theme.variables.visitorsLegend);
       });
+  }
 
+  ngOnInit() {
+    this.loading = true;
     forkJoin(
-      this.visitorsAnalyticsChartService.getInnerLineChartData(),
-      this.visitorsAnalyticsChartService.getOutlineLineChartData(),
-      this.visitorsAnalyticsChartService.getPieChartData(),
+      this.apiService.getTwitterData(),
+      this.apiService.getTwitterUserData(),
     )
       .pipe(takeWhile(() => this.alive))
-      .subscribe(([innerLine, outerLine, pieChartValue]: [number[], OutlineData[], number]) => {
-        this.visitorsAnalyticsData = {
-          innerLine: innerLine,
-          outerLine: outerLine,
-        };
-
-        this.pieChartValue = pieChartValue;
+      .subscribe(([twitterData, twitterUser]) => {
+        console.log('asdsda', twitterData);
+        console.log('asdasdsd', twitterUser);
+        this.twitterUser = twitterUser;
+        forkJoin(
+          this.visitorsAnalyticsChartService.getOutlineLineChartData(twitterData),
+          this.visitorsAnalyticsChartService.getPieChartData(),
+        )
+          .pipe(takeWhile(() => this.alive))
+          .subscribe(([outerLine, pieChartValue]: [OutlineData[], number]) => {
+            this.loading = false;
+            this.visitorsAnalyticsData = {
+              outerLine: outerLine,
+            };
+            this.pieChartValue = pieChartValue;
+          });
       });
   }
 
   setLegendItems(visitorsLegend): void {
     this.chartLegend = [
       {
-        iconColor: visitorsLegend.firstIcon,
-        title: 'Unique Visitors',
-      },
-      {
         iconColor: visitorsLegend.secondIcon,
-        title: 'Page Views',
+        title: 'Tweet Count',
       },
     ];
   }

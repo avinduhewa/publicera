@@ -13,14 +13,17 @@ export class ECommerceVisitorsStatisticsComponent implements AfterViewInit, OnDe
 
   private alive = true;
 
+  @Input() twitterUser: any;
   @Input() value: number;
+
+  total = 0;
 
   option: any = {};
   chartLegend: { iconColor: string; title: string }[];
   echartsIntance: any;
 
   constructor(private theme: NbThemeService,
-              private layoutService: LayoutService) {
+    private layoutService: LayoutService) {
     this.layoutService.onChangeLayoutSize()
       .pipe(
         takeWhile(() => this.alive),
@@ -29,6 +32,8 @@ export class ECommerceVisitorsStatisticsComponent implements AfterViewInit, OnDe
   }
 
   ngAfterViewInit() {
+    this.total = this.twitterUser.followers_count + this.twitterUser.friends_count;
+    console.log(this.twitterUser);
     this.theme.getJsTheme()
       .pipe(
         takeWhile(() => this.alive),
@@ -40,18 +45,18 @@ export class ECommerceVisitorsStatisticsComponent implements AfterViewInit, OnDe
 
         this.setOptions(variables);
         this.setLegendItems(visitorsPieLegend);
-    });
+      });
   }
 
   setLegendItems(visitorsPieLegend) {
     this.chartLegend = [
       {
         iconColor: visitorsPieLegend.firstSection,
-        title: 'New Visitors',
+        title: 'Followers',
       },
       {
         iconColor: visitorsPieLegend.secondSection,
-        title: 'Return Visitors',
+        title: 'Following',
       },
     ];
   }
@@ -74,7 +79,7 @@ export class ECommerceVisitorsStatisticsComponent implements AfterViewInit, OnDe
           radius: visitorsPie.firstPieRadius,
           data: [
             {
-              value: this.value,
+              value: this.twitterUser.friends_count,
               name: ' ',
               label: {
                 normal: {
@@ -112,7 +117,7 @@ export class ECommerceVisitorsStatisticsComponent implements AfterViewInit, OnDe
               hoverAnimation: false,
             },
             {
-              value: 100 - this.value,
+              value: this.total - this.twitterUser.friends_count,
               name: ' ',
               tooltip: {
                 show: false,
@@ -139,7 +144,7 @@ export class ECommerceVisitorsStatisticsComponent implements AfterViewInit, OnDe
           radius: visitorsPie.secondPieRadius,
           data: [
             {
-              value: this.value,
+              value: this.twitterUser.friends_count,
               name: ' ',
               label: {
                 normal: {
@@ -164,7 +169,7 @@ export class ECommerceVisitorsStatisticsComponent implements AfterViewInit, OnDe
               hoverAnimation: false,
             },
             {
-              value: 100 - this.value,
+              value: this.total - this.twitterUser.friends_count,
               name: ' ',
               tooltip: {
                 show: false,

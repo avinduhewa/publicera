@@ -6,14 +6,16 @@
   <div class="col-md-4">
     <nb-card accent="success">
       <nb-card-header>
-        <img style="width:100%" class="img" alt="Card image cap" src="../../../assets/images/alan.png">
+        <img style="width:100%" class="img" alt="Card image cap" src="../../../assets/images/2.jpg">
       </nb-card-header>
       <nb-card-body>
-        <h4>Alan Rickman</h4>
-        <h5>Digital Marketing Consultant</h5>
-        <p>3 years of experience, From Norway</p>
+        <h4>Avindu Hewa</h4>
+        <h5>E-Commerce Platform Engineer</h5>
+        <p>4 years of experience, From Sri Lanka</p>
       </nb-card-body>
-      <nb-card-footer> <button nbButton status="success" outline>Connect (23 Endorsements)</button> </nb-card-footer>
+      <nb-card-footer>
+        <button nbButton status="success" outline (click)="call()">Available (23 Endorsements)</button>
+      </nb-card-footer>
     </nb-card>
   </div>
 
@@ -27,7 +29,9 @@
         <h5>Digital Marketing Consultant</h5>
         <p>4 years of experience, From USA</p>
       </nb-card-body>
-      <nb-card-footer> <button nbButton status="success" outline>Connect (19 Endorsements)</button> </nb-card-footer>
+      <nb-card-footer>
+        <button nbButton status="success" outline (click)="call()">Available (19 Endorsements)</button>
+      </nb-card-footer>
     </nb-card>
   </div>
 
@@ -41,12 +45,12 @@
         <h5>Digital Marketing Executive</h5>
         <p>2 years of experience, From Canada</p>
       </nb-card-body>
-      <nb-card-footer> <button nbButton status="success" outline>Connect (4 Endorsements)</button> </nb-card-footer>
+      <nb-card-footer>
+        <button nbButton status="success" outline (click)="call()">Available (4 Endorsements)</button>
+      </nb-card-footer>
     </nb-card>
   </div>
 </div>
-
-
 <hr>
 <h3>Professionals offline</h3>
 <div class="row">
@@ -60,9 +64,8 @@
         <h5>Digital Marketing Consultant</h5>
         <p>4 years of experience, From Greece</p>
       </nb-card-body>
-      <nb-card-footer> <button nbButton status="danger" outline disabled>Connect (10 Endorsements)</button>
+      <nb-card-footer> <button nbButton status="danger" outline disabled>Unavailable (10 Endorsements)</button>
       </nb-card-footer>
     </nb-card>
   </div>
-
 </div>

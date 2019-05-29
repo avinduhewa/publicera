@@ -6,7 +6,7 @@ provider:
   region: ap-southeast-1
   profile: smokingdots
   environment:
-    db_url: mongodb://admin:password123@ds159185.mlab.com:59185/publicera
+    db_url: mongodb://admin:password123@ds159185.mlab.com:59185
     db_name: publicera
 
 custom:

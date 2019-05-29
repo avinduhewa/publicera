@@ -5,6 +5,10 @@ import { StripHtmlTagsPipe } from './pipes/strip-html-tags.pipe';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { UserService } from './services/user.service';
 import { FacebookService } from './services/facebook.service';
+import { ApiService } from './services/api.service';
+import { TwitterService } from 'ngx-twitter-api';
+import { Interceptor } from './interceptor/interceptor';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,6 +22,13 @@ import { FacebookService } from './services/facebook.service';
     FeedService,
     UserService,
     FacebookService,
+    ApiService,
+    TwitterService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: Interceptor,
+      multi: true,
+    },
   ],
   exports: [
     StripHtmlTagsPipe,

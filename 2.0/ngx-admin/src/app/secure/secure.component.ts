@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./secure.component.scss'],
 })
 export class SecureComponent implements OnInit {
+  showMenu = false;
   menu: NbMenuItem[] = [
     {
       title: 'Dashboard',
@@ -107,11 +108,18 @@ export class SecureComponent implements OnInit {
       link: '/app/upgrade',
       hidden: false,
     },
+    {
+      title: 'Profile',
+      icon: 'nb-person',
+      link: '/app/profile',
+      hidden: false,
+    },
   ];
 
   constructor(
     private router: Router,
   ) { }
+
 
   ngOnInit() {
     const userType = localStorage.getItem('userType');
@@ -143,6 +151,8 @@ export class SecureComponent implements OnInit {
     if (!localStorage.getItem('user')) {
       this.router.navigateByUrl('/');
     }
+
+    this.showMenu = true;
   }
 
 }

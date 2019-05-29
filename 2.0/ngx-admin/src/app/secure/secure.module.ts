@@ -54,6 +54,8 @@ import { TwitterComponent } from './cms/twitter/twitter.component';
 import { InstagramComponent } from './cms/instagram/instagram.component';
 import { UpgradeComponent } from './upgrade/upgrade.component';
 import { NgxPayPalModule } from 'ngx-paypal';
+import { ProfileComponent } from './profile/profile.component';
+import { NbBadgeModule } from '@nebular/theme';
 
 @NgModule({
   declarations: [
@@ -98,6 +100,7 @@ import { NgxPayPalModule } from 'ngx-paypal';
     TwitterComponent,
     InstagramComponent,
     UpgradeComponent,
+    ProfileComponent,
   ],
   imports: [
     CommonModule,
@@ -110,6 +113,7 @@ import { NgxPayPalModule } from 'ngx-paypal';
     LeafletModule,
     PdfViewerModule,
     NgxPayPalModule,
+    NbBadgeModule
   ],
   providers: [
     CountryOrdersMapService,

@@ -1,8 +1,9 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 import { takeWhile } from 'rxjs/operators';
 
 import { UserActivityData, UserActive } from '../../../@core/data/user-activity';
+import { ApiService } from '../../../shared/services/api.service';
 
 @Component({
   selector: 'ngx-user-activity',
@@ -27,20 +28,18 @@ import { UserActivityData, UserActive } from '../../../@core/data/user-activity'
       </nb-card-header>
       <nb-card-body>
         <ul class="user-activity-list">
-          <li *ngFor="let item of userActivity">
+          <li *ngFor="let item of tweets">
             <div class="visited-date">
-              {{ item.date }}
+              {{ item.created_at |date}}
             </div>
-            <div class="visited-pages-count">
-              <div class="title">Pages Visit</div>
-              <div class="value">{{ item.pagesVisitCount }}</div>
+            <div class="visited-pages-count" (click)="navigate(item)">
+              <div class="title">Tweet Body</div>
+              <div class="value">{{ item.text | slice:0:55 }}</div>
             </div>
             <div class="visited-percentages">
-              <div class="title">New visits, %</div>
-              <div class="delta value"
-                   [class.up]="item.deltaUp"
-                   [class.down]="!item.deltaUp">
-                {{ item.newVisits }}%
+              <div class="title">Retweet Count,</div>
+              <div class="delta value">
+                {{ item.retweet_count }}
               </div>
             </div>
           </li>
@@ -49,7 +48,7 @@ import { UserActivityData, UserActive } from '../../../@core/data/user-activity'
     </nb-card>
   `,
 })
-export class ECommerceUserActivityComponent implements OnDestroy {
+export class ECommerceUserActivityComponent implements OnInit, OnDestroy {
 
   private alive = true;
 
@@ -57,16 +56,24 @@ export class ECommerceUserActivityComponent implements OnDestroy {
   type = 'month';
   types = ['week', 'month', 'year'];
   currentTheme: string;
+  tweets = [];
 
-  constructor(private themeService: NbThemeService,
-              private userActivityService: UserActivityData) {
+  constructor(
+    private themeService: NbThemeService,
+    private userActivityService: UserActivityData,
+    private apiService: ApiService,
+  ) {
     this.themeService.getJsTheme()
       .pipe(takeWhile(() => this.alive))
       .subscribe(theme => {
         this.currentTheme = theme.name;
-    });
+      });
 
     this.getUserActivity(this.type);
+  }
+
+  ngOnInit() {
+    this.getTweets();
   }
 
   getUserActivity(period: string) {
@@ -79,5 +86,24 @@ export class ECommerceUserActivityComponent implements OnDestroy {
 
   ngOnDestroy() {
     this.alive = false;
+  }
+
+  getTweets() {
+    this.apiService.getTwitterData().subscribe(res => {
+      console.log('asdasdas', res);
+      this.tweets = res.statuses;
+    });
+  }
+
+  getTwitterHandle() {
+    let user = JSON.parse(localStorage.getItem('user'));
+    const url = user.socialMedia.twitter.split('/').reverse();
+    console.log('url', url);
+    return url[0];
+  }
+
+  navigate(tweet) {
+    const handle = this.getTwitterHandle();
+    window.open(`https://twitter.com/${handle}/status/${tweet.id_str}`, "_blank");
   }
 }
